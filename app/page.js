@@ -338,7 +338,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Google Certifications */}
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-red-500/5 to-yellow-500/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
                 <div className="text-4xl md:text-5xl lg:text-6xl mb-6 cyber-font">
                   <span className="text-blue-400 neon-text">G</span>
@@ -359,7 +359,7 @@ export default function Home() {
 
             {/* AWS Certification */}
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-yellow-500/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
                 <div className="text-2xl md:text-3xl lg:text-4xl font-bold cyber-font mb-6 text-orange-400 neon-text">
                   AWS
@@ -374,7 +374,7 @@ export default function Home() {
 
             {/* Penn Certification */}
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-800/5 to-red-800/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-center mb-6">
                   <div className="w-12 h-12 bg-blue-800 rounded flex items-center justify-center mr-3 neon-glow">
@@ -489,7 +489,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-xl cyber-body mb-12 max-w-2xl mx-auto text-cyan-100">
-            Ready to bring ethical AI implementation and strategic project management to your organization. 
+            Ready to bring ethical AI implementation, strategic project management, and a fresh philosophical perspective to your organization? 
             Let's discuss how I can contribute to your team's success.
           </p>
           
@@ -531,7 +531,7 @@ export default function Home() {
             <div className="absolute inset-0 cyber-grid opacity-5"></div>
             <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 cyber-font text-purple-400 neon-text relative z-10 break-all">READY_TO_MAKE_IMPACT</h3>
             <p className="text-cyan-100 mb-6 cyber-body relative z-10">
-              Seeking project management opportunities in the Denver/Boulder/Fort Collins area where I can apply my unique combination 
+              I am seeking project management opportunities in the <strong>Denver/Boulder/Fort Collins</strong> area where I can apply my unique combination 
               of philosophical thinking, business acumen, and AI ethics expertise.
             </p>
             <a 
@@ -555,7 +555,7 @@ export default function Home() {
       <footer className="bg-black text-cyan-400 py-8 border-t border-cyan-400/30 relative z-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="cyber-body tracking-wider">
-            © 2025 MICAH_PROBST.EXE | Built with passion for ethical AI and strategic project management | 
+            © 2025 MICAH_PROBST.EXE | Built with passion for ethical AI| 
             <span className="text-pink-400 animate-cyber-pulse"> SYSTEM_ONLINE </span>
           </p>
         </div>
