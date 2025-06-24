@@ -165,9 +165,9 @@ export default function Home() {
                 <button 
                   key={item}
                   onClick={() => scrollToSection(['hero', 'about', 'education', 'currently', 'journey', 'contact'][index])} 
-                  className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider relative group"
+                  className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider relative group break-normal"
                 >
-                  <span className="relative z-10">{item}</span>
+                  <span className="relative z-10">{item.replace(/_/g, '_\u200B')}</span>
                   <span className="absolute inset-0 bg-cyan-400/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                 </button>
               ))}
@@ -189,11 +189,11 @@ export default function Home() {
                   </span>
                 </h1>
                 <div className="text-2xl cyber-body font-light break-normal">
-                  <span className="text-cyan-400 neon-text">PHILOSOPHY_GRADUATE</span>
+                  <span className="text-cyan-400 neon-text">PHILOSOPHY_\u200BGRADUATE</span>
                   <span className="text-pink-400 mx-2">|</span>
-                  <span className="text-purple-400 neon-text">CRITICAL_THINKER</span>
+                  <span className="text-purple-400 neon-text">CRITICAL_\u200BTHINKER</span>
                   <span className="text-pink-400 mx-2">|</span>
-                  <span className="text-cyan-400 neon-text">PEOPLE_PERSON</span>
+                  <span className="text-cyan-400 neon-text">PEOPLE_\u200BPERSON</span>
                 </div>
               </div>
               
@@ -313,7 +313,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
                   <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
-                    {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
+                    {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_').replace(/_/g, '_\u200B')}
                   </h3>
                 </div>
                 
@@ -349,9 +349,9 @@ export default function Home() {
                   <span className="text-red-400 neon-text">E</span>
                 </div>
                 <div className="space-y-3 cyber-body">
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_PROJECT_MANAGEMENT</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_DATA_ANALYTICS</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_PROJECT_\u200BMANAGEMENT</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_DATA_\u200BANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_CLOUD_\u200BDATA_ANALYTICS</p>
                 </div>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
@@ -366,7 +366,7 @@ export default function Home() {
                 </div>
                 <div className="bg-orange-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
                 <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-normal">
-                  SECURITY_COMPLIANCE_AND_GOVERNANCE_FOR_AI_SOLUTIONS
+                  SECURITY_COMPLIANCE_\u200BAND_GOVERNANCE_\u200BFOR_AI_SOLUTIONS
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-orange-400 rounded animate-cyber-pulse"></div>
@@ -382,9 +382,9 @@ export default function Home() {
                   </div>
                   <div className="text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
                 </div>
-                <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider">UNIVERSITY_OF_PENNSYLVANIA</div>
+                <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider break-normal">UNIVERSITY_OF_\u200BPENNSYLVANIA</div>
                 <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-normal">
-                  AI_FOR_BUSINESS_SPECIALIZATION
+                  AI_FOR_BUSINESS_\u200BSPECIALIZATION
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
@@ -399,7 +399,7 @@ export default function Home() {
           <h2 className="text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="MY_JOURNEY.LOG">MY_JOURNEY.LOG</span>
           </h2>
-          <h3 className="text-2xl cyber-body mb-4 text-purple-400">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
+          <h3 className="text-2xl cyber-body mb-4 text-purple-400 break-normal">LEARNING_FROM_\u200BEVERY_OPPORTUNITY</h3>
           <p className="text-xl cyber-body leading-relaxed max-w-3xl mx-auto text-cyan-100">
             From (almost) testing out of high school at 15 to graduating with a philosophy degree at 19, here's how I've built a foundation of diverse experiences and continuous learning
           </p>
@@ -412,12 +412,12 @@ export default function Home() {
             <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-pink-400 neon-glow"></div>
 
             {timelineItems.map((item, index) => (
-              <div key={index} className="relative flex items-center mb-16">
+              <div key={index} className="relative flex items-center mb-8">
                 {/* Timeline Dot */}
                 <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${item.color} rounded-full border-4 border-black shadow-lg z-10 animate-cyber-pulse`}></div>
 
                 {/* Content Card */}
-                <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                <div className={`w-full md:w-7/12 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'}`}>
                   <div className="cyber-border bg-gray-900/50 p-8 border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all duration-300 group relative overflow-hidden">
                     <div className="absolute inset-0 cyber-grid opacity-5"></div>
                     
@@ -429,22 +429,22 @@ export default function Home() {
                     </div>
                     
                     <h3 className="text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
-                      {item.title.toUpperCase().replace(/ /g, '_')}
+                      {item.title.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
                     </h3>
                     <p className="text-purple-400 font-semibold mb-4 text-lg cyber-body break-normal">
-                      {item.subtitle.toUpperCase().replace(/ /g, '_')}
+                      {item.subtitle.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
                     </p>
                     <p className="text-cyan-100 mb-6 leading-relaxed cyber-body">{item.description}</p>
                     
                     {item.skills.length > 0 && (
                       <div className="pt-6 border-t border-cyan-400/30 relative z-10">
                         <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-normal">
-                          {item.skillsLabel.toUpperCase().replace(/ /g, '_')}:
+                          {item.skillsLabel.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}:
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {item.skills.map((skill, skillIndex) => (
                             <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-normal">
-                              {skill.toUpperCase().replace(/ /g, '_')}
+                              {skill.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
                             </span>
                           ))}
                         </div>
@@ -467,7 +467,7 @@ export default function Home() {
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-6xl font-bold mb-8 cyber-font neon-text text-pink-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">ESTABLISH_CONNECTION</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">ESTABLISH_\u200BCONNECTION</span>
           </h2>
           <p className="text-xl cyber-body mb-12 max-w-2xl mx-auto text-cyan-100">
             Ready to bring ethical AI implementation and strategic project management to your organization. 
@@ -481,7 +481,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5"></div>
               <Mail size={48} className="mx-auto mb-4 text-cyan-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
-              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors">EMAIL_INTERFACE</h3>
+              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">EMAIL_\u200BINTERFACE</h3>
               <p className="text-cyan-400 cyber-body text-sm tracking-wider break-all">micah.x.probst@gmail.com</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
             </a>
@@ -502,7 +502,7 @@ export default function Home() {
             <div className="group cyber-border bg-black/50 backdrop-blur-sm p-8 border border-cyan-400/30 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
               <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
-              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100">LOCATION_DATA</h3>
+              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 break-normal">LOCATION_\u200BDATA</h3>
               <p className="text-green-400 cyber-body text-sm tracking-wider">Boulder, Colorado</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
             </div>
@@ -510,7 +510,7 @@ export default function Home() {
 
           <div className="cyber-border bg-black/50 backdrop-blur-sm p-8 border border-cyan-400/30 relative overflow-hidden">
             <div className="absolute inset-0 cyber-grid opacity-5"></div>
-            <h3 className="text-2xl font-bold mb-4 cyber-font text-purple-400 neon-text relative z-10">READY_TO_MAKE_IMPACT</h3>
+            <h3 className="text-2xl font-bold mb-4 cyber-font text-purple-400 neon-text relative z-10 break-normal">READY_TO_\u200BMAKE_IMPACT</h3>
             <p className="text-cyan-100 mb-6 cyber-body relative z-10">
               Seeking project management opportunities in the Denver/Boulder/Fort Collins area where I can apply my unique combination 
               of philosophical thinking, business acumen, and AI ethics expertise.
@@ -519,7 +519,7 @@ export default function Home() {
               href="mailto:micah.x.probst@gmail.com" 
               className="inline-flex items-center bg-gradient-to-r from-purple-600 to-cyan-600 text-black px-8 py-4 rounded font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative z-10"
             >
-              INITIATE_CONVERSATION
+              INITIATE_\u200BCONVERSATION
               <ExternalLink size={20} className="ml-2" />
             </a>
             
