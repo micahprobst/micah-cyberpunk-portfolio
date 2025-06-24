@@ -22,16 +22,16 @@ export default function Home() {
   const timelineItems = [
     {
       date: "AUG 2019",
-      title: "Begin associates",
-      subtitle: "Begin Associates Degree",
-      description: "Entered Colorado Community Colleges and tested out of all but 2 high school classes. Began concurrent enrollment at Front Range Community College.",
+      title: "Begin Associates Degree",
+      subtitle: "Front Range Community College",
+      description: "Entered Colorado Early Colleges and tested out of all but 2 high school classes. Began concurrent enrollment at Front Range Community College.",
       skills: [],
       skillsLabel: "",
       color: "from-cyan-400 to-blue-500"
     },
     {
       date: "MAR 2021 - AUG 2021", 
-      title: "Paradigm",
+      title: "Warehouse Technician",
       subtitle: "Paradigm",
       description: "Worked on a team to clean and repair ankle monitor chargers. First exposure to a professional environment.",
       skills: ["Procedural tasks", "Warehouse safety", "Time management"],
@@ -40,7 +40,7 @@ export default function Home() {
     },
     {
       date: "AUG 2021 - SEPT 2021",
-      title: "Ion Solar", 
+      title: "Direct Sales", 
       subtitle: "Ion Solar",
       description: "Performed direct sales in residential areas. Used sales skills to collect qualifying information on the property and set up appointments for residents to meet with our closers.",
       skills: ["Door-to-door sales", "Developing warm leads", "Managing customer confrontation"],
@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       date: "MAR 2022 - JUNE 2022",
-      title: "UPS Store",
+      title: "Customer Service Representative",
       subtitle: "UPS Store", 
       description: "Acted as the primary point of interaction for customers shipping and receiving packages. First experience developing lasting relationships with customers.",
       skills: ["Cash handling", "Opening and closing", "Nurturing client relationships"],
@@ -59,16 +59,16 @@ export default function Home() {
     {
       date: "AUG 2022 - JULY 2023",
       title: "Entrepreneurship experiments",
-      subtitle: "Entrepreneurship experiments",
+      subtitle: "Self-initiated projects",
       description: "Ranging from attempts at developing personal brands, online stores, digital services, and a moderately profitable car detailing business, this was the year I learned the most about the business world.",
       skills: ["Self initiative", "Deep research", "Small business operations"],
       skillsLabel: "Skills gained",
       color: "from-purple-400 to-violet-500"
     },
     {
-      date: "Associates end & certificates",
-      title: "Complete associates degree", 
-      subtitle: "Complete associates degree",
+      date: "May 2023",
+      title: "Complete Associates Degree", 
+      subtitle: "Front Range Community College",
       description: "Graduated Front Range Community College with a specialization in business, 4.61 GPA, and 73 transferable college credits.",
       skills: ["Small Business Operation", "Small Business Ownership", "Ownership & Foundations of Business"],
       skillsLabel: "Certificates earned",
@@ -76,17 +76,17 @@ export default function Home() {
     },
     {
       date: "AUG 2023",
-      title: "Begin undergrad",
-      subtitle: "Begin Bachelor's Degree", 
-      description: "Was accepted to the Leeds School of Business but changed departments and major to Philosophy after the first week.",
+      title: "Begin Bachelor's Degree",
+      subtitle: "University of Colorado Boulder", 
+      description: "Was accepted to the Leeds School of Business before changing departments and major to Philosophy after the first week.",
       skills: [],
       skillsLabel: "",
       color: "from-indigo-400 to-purple-500"
     },
     {
       date: "AUG 2023 - JAN 2025",
-      title: "TKD",
-      subtitle: "Taekwondo Club",
+      title: "Taekwondo Club Leadership",
+      subtitle: "University of Colorado Boulder",
       description: "Joined the University of Colorado Boulder Taekwondo club sports team. Competed on the team when they got 2nd place at Nationals.",
       skills: ["Athlete", "Captain", "Vice President"],
       skillsLabel: "Positions held",
@@ -94,7 +94,7 @@ export default function Home() {
     },
     {
       date: "AUG 2024 - DEC 2024", 
-      title: "Boulder Escape Room",
+      title: "Game Master",
       subtitle: "Boulder Escape Room",
       description: "Functioned as Game Master for the Boulder Escape Room. Duties included: welcoming guests and explaining rules, monitoring teams during games, and providing hints as needed.",
       skills: ["Problem solving", "Game operations", "Employee training"],
@@ -112,17 +112,17 @@ export default function Home() {
     },
     {
       date: "MAY 2025",
-      title: "Graduation",
-      subtitle: "Complete Bachelor's Degree",
+      title: "Complete Bachelor's Degree",
+      subtitle: "University of Colorado Boulder",
       description: "Graduated from the University of Colorado Boulder school of Arts and Sciences with a Bachelor's Degree in Philosophy and a 3.38 GPA.",
       skills: ["AI ethics", "Epistemology", "Philosophy of mind"],
       skillsLabel: "Philosophical emphasis",
       color: "from-purple-400 to-pink-500"
     },
     {
-      date: "MAY 2025 - present", 
-      title: "Ongoing",
-      subtitle: "Continued development",
+      date: "MAY 2025 - Present", 
+      title: "The Next Chapter",
+      subtitle: "TBD...",
       description: "I am now furthering my skills through certification courses and external personal study into the AI field and broader business operations.",
       skills: ["AI for Business", "Google Data Analytics", "Google Project Management", "Google Cloud Data Analytics", "Security, Compliance, and Governance for AI Solutions"],
       skillsLabel: "Certifications in progress",
@@ -203,9 +203,9 @@ export default function Home() {
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400"></div>
                 
                 <p className="text-lg cyber-body leading-relaxed text-cyan-100">
-                  I'm Micah Probst, a recent graduate of the University of Colorado Boulder with a bachelor's degree in philosophy and business 
-                  certifications acquired during my associates degree. I've done all this at 19, and I'm not stopping. I'm currently working toward 
-                  certifications in project management, data analytics, and AI governance. My goal is to apply my analytical and organizational 
+                  I'm <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications</strong>
+                  acquired during my associates degree. I've done all this at <strong>19</strong>, and I'm not stopping. I'm currently working toward
+                  certifications in <strong>project management, data analytics, and AI governance.</strong> My goal is to apply my analytical and organizational
                   skills to help create a more efficient and responsibly AI-powered future of work.
                 </p>
               </div>
@@ -326,7 +326,7 @@ export default function Home() {
       <section id="currently" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-6xl font-bold text-center cyber-font mb-16 neon-text text-pink-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">CURRENT_PROCESSES...</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">IN_PROGRESS...</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -372,7 +372,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="flex items-center justify-center mb-6">
                   <div className="w-12 h-12 bg-blue-800 rounded flex items-center justify-center mr-3 neon-glow">
-                    <span className="text-white font-bold text-xl cyber-font">P</span>
+                    <span className="text-white font-bold text-xl cyber-font">U</span>
                   </div>
                   <div className="text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
                 </div>
@@ -497,7 +497,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
               <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
               <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100">LOCATION_DATA</h3>
-              <p className="text-green-400 cyber-body text-sm tracking-wider">Westminster, Colorado</p>
+              <p className="text-green-400 cyber-body text-sm tracking-wider">Boulder, Colorado</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
             </div>
           </div>
@@ -506,7 +506,7 @@ export default function Home() {
             <div className="absolute inset-0 cyber-grid opacity-5"></div>
             <h3 className="text-2xl font-bold mb-4 cyber-font text-purple-400 neon-text relative z-10">READY_TO_MAKE_IMPACT</h3>
             <p className="text-cyan-100 mb-6 cyber-body relative z-10">
-              Seeking project management opportunities in the Denver/Boulder area where I can apply my unique combination 
+              Seeking project management opportunities in the Denver/Boulder/Fort Collins area where I can apply my unique combination 
               of philosophical thinking, business acumen, and AI ethics expertise.
             </p>
             <a 
