@@ -1,0 +1,11 @@
+{
+  "project": "micah-cyberpunk-portfolio",
+  "framework": "nextjs",
+  "language": "typescript",
+  "style": "tailwindcss",
+  "context": {
+    "theme": "cyberpunk",
+    "primary_colors": ["#00ffff", "#0080ff"],
+    "focus": "portfolio optimization and bug fixes"
+  }
+}

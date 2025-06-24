@@ -1,5 +1,5 @@
 'use client';
-// Force deployment trigger
+// Clean deployment - removed old static files
 
 import { useState, useEffect } from 'react';
 import { Mail, Linkedin, Phone, User, Brain, Target, Award, Calendar, ExternalLink, ChevronDown, Play, Zap, Code, Database, Shield } from 'lucide-react';
