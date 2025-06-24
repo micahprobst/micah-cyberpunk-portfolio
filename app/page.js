@@ -182,13 +182,13 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 space-y-8">
               <div className="space-y-4">
-                <h1 className="text-7xl font-bold cyber-font">
+                <h1 className="text-7xl font-bold cyber-font break-words">
                   <span className={`bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent neon-text ${glitchActive ? 'glitch' : ''}`} 
                         data-text="MICAH PROBST">
                     MICAH PROBST
                   </span>
                 </h1>
-                <div className="text-2xl cyber-body font-light">
+                <div className="text-2xl cyber-body font-light break-words">
                   <span className="text-cyan-400 neon-text">PHILOSOPHY_GRADUATE</span>
                   <span className="text-pink-400 mx-2">|</span>
                   <span className="text-purple-400 neon-text">CRITICAL_THINKER</span>
@@ -204,7 +204,7 @@ export default function Home() {
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400"></div>
                 
                 <p className="text-lg cyber-body leading-relaxed text-cyan-100">
-                  I'm <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications</strong>
+                  I'm <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications </strong> 
                   acquired during my associates degree. I've done all this at <strong>19</strong>, and I'm not stopping. I'm currently working toward
                   certifications in <strong>project management, data analytics, and AI governance.</strong> My goal is to apply my analytical and organizational
                   skills to help create a more efficient and responsibly AI-powered future of work.
@@ -233,10 +233,10 @@ export default function Home() {
       {/* Who Am I Section */}
       <section id="about" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400">
+          <h2 className="text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400 break-words">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
-          <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400">
+          <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-words">
             EARLY_ADOPTER <span className="text-pink-400">|</span> ETHICALLY_DEVOTED <span className="text-pink-400">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
@@ -312,7 +312,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
-                  <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">
                     {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
                   </h3>
                 </div>
@@ -349,9 +349,9 @@ export default function Home() {
                   <span className="text-red-400 neon-text">E</span>
                 </div>
                 <div className="space-y-3 cyber-body">
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors">PROFESSIONAL_PROJECT_MANAGEMENT</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors">PROFESSIONAL_DATA_ANALYTICS</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_PROJECT_MANAGEMENT</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
                 </div>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
@@ -365,7 +365,7 @@ export default function Home() {
                   AWS
                 </div>
                 <div className="bg-orange-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body">
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words">
                   SECURITY_COMPLIANCE_AND_GOVERNANCE_FOR_AI_SOLUTIONS
                 </p>
               </div>
@@ -383,7 +383,7 @@ export default function Home() {
                   <div className="text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
                 </div>
                 <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider">UNIVERSITY_OF_PENNSYLVANIA</div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body">
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words">
                   AI_FOR_BUSINESS_SPECIALIZATION
                 </p>
               </div>
@@ -428,22 +428,22 @@ export default function Home() {
                       <Calendar size={20} className="text-cyan-400 animate-cyber-pulse" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">
                       {item.title.toUpperCase().replace(/ /g, '_')}
                     </h3>
-                    <p className="text-purple-400 font-semibold mb-4 text-lg cyber-body">
+                    <p className="text-purple-400 font-semibold mb-4 text-lg cyber-body break-words">
                       {item.subtitle.toUpperCase().replace(/ /g, '_')}
                     </p>
                     <p className="text-cyan-100 mb-6 leading-relaxed cyber-body">{item.description}</p>
                     
                     {item.skills.length > 0 && (
                       <div className="pt-6 border-t border-cyan-400/30 relative z-10">
-                        <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider">
+                        <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-words">
                           {item.skillsLabel.toUpperCase().replace(/ /g, '_')}:
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {item.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all">
+                            <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-words">
                               {skill.toUpperCase().replace(/ /g, '_')}
                             </span>
                           ))}
