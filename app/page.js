@@ -2,7 +2,7 @@
 // Clean deployment - removed old static files
 
 import { useState, useEffect } from 'react';
-import { Mail, Linkedin, Phone, User, Brain, Target, Award, Calendar, ExternalLink, ChevronDown, Play, Zap, Code, Database, Shield } from 'lucide-react';
+import { Mail, Linkedin, Phone, Calendar, ExternalLink, Zap } from 'lucide-react';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -215,15 +215,12 @@ export default function Home() {
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
                 <div className="w-80 h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden relative neon-glow animate-cyber-pulse">
-                  <div className="w-full h-full bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/80 via-purple-600/80 to-red-500/80"></div>
-                    <div className="relative z-10 text-center text-white">
-                      <User size={60} className="mx-auto mb-4" />
-                      <p className="text-sm font-medium cyber-body">NEURAL_INTERFACE</p>
-                      <p className="text-sm font-medium cyber-body">PHOTO_UPLOAD</p>
-                      <p className="text-xs font-bold mt-2 cyber-body">[BLUE/RED_LIGHTING]</p>
-                    </div>
-                  </div>
+                  <img 
+                    src="/images/hero-profile.jpg" 
+                    alt="Micah Probst - Portfolio Photo"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/10 to-pink-400/10"></div>
                 </div>
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded animate-cyber-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded animate-cyber-pulse" style={{animationDelay: '1s'}}></div>
@@ -243,36 +240,25 @@ export default function Home() {
             EARLY_ADOPTER <span className="text-pink-400">|</span> ETHICALLY_DEVOTED <span className="text-pink-400">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
-          {/* Video Player Mockup */}
+          {/* Video Player */}
           <div className="max-w-2xl mx-auto mb-12 relative">
-            <div className="cyber-border bg-gradient-to-b from-blue-900/30 via-green-900/30 to-green-600/30 rounded-2xl h-80 flex items-center justify-center relative shadow-lg border border-cyan-400/30 overflow-hidden">
+            <div className="cyber-border bg-gradient-to-b from-blue-900/30 via-green-900/30 to-green-600/30 rounded-2xl overflow-hidden relative shadow-lg border border-cyan-400/30">
               {/* Holographic Effect */}
-              <div className="absolute inset-0 hologram"></div>
+              <div className="absolute inset-0 hologram pointer-events-none z-10"></div>
               
-              {/* Sky and clouds */}
-              <div className="absolute top-8 left-8 w-16 h-8 bg-cyan-400/20 rounded-full animate-cyber-pulse"></div>
-              <div className="absolute top-12 right-12 w-12 h-6 bg-cyan-400/20 rounded-full animate-cyber-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-6 right-24 w-8 h-4 bg-cyan-400/20 rounded-full animate-cyber-pulse" style={{animationDelay: '2s'}}></div>
+              <video 
+                className="w-full h-80 object-cover"
+                controls
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
+              >
+                <source src="/videos/intro-video.mov" type="video/mp4" />
+                <source src="/videos/intro-video.mov" type="video/quicktime" />
+                Your browser does not support the video tag.
+              </video>
               
-              {/* Play button */}
-              <div className="w-20 h-20 bg-cyan-400/80 rounded-full flex items-center justify-center cursor-pointer hover:bg-cyan-400 transition-all neon-glow relative group">
-                <Play size={32} className="text-black ml-2" />
-                <div className="absolute inset-0 rounded-full border-2 border-cyan-400 scale-0 group-hover:scale-150 transition-transform opacity-0 group-hover:opacity-50"></div>
-              </div>
-              
-              {/* Video controls */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-black/70 rounded-lg p-3 border border-cyan-400/30">
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 h-1 bg-gray-600 rounded-full overflow-hidden">
-                      <div className="h-1 bg-gradient-to-r from-cyan-400 to-pink-400 rounded-full w-1/3"></div>
-                    </div>
-                    <div className="w-8 h-3 bg-cyan-400/20 rounded"></div>
-                  </div>
-                </div>
-              </div>
+              {/* Cyberpunk overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-purple-600/5 to-pink-400/5 pointer-events-none"></div>
             </div>
-            <p className="text-cyan-400 mt-4 cyber-body tracking-wider">&gt; SEE_TRANSCRIPT</p>
           </div>
         </div>
       </section>
@@ -286,29 +272,49 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Bachelor's of Philosophy",
-              "Associates of Arts", 
-              "Specialization in Business",
-              "Small Business Ownership",
-              "Small Business Operations", 
-              "Foundations of Business"
-            ].map((title, index) => (
+              {
+                title: "Bachelor's of Philosophy",
+                image: "/certificates/bachelors-philosophy.jpg",
+                alt: "Bachelor's of Philosophy Certificate"
+              },
+              {
+                title: "Associates of Arts",
+                image: "/certificates/associates-arts.JPG",
+                alt: "Associates of Arts Certificate"
+              },
+              {
+                title: "Specialization in Business",
+                image: "/certificates/business-specialization.JPG",
+                alt: "Business Specialization Certificate"
+              },
+              {
+                title: "Small Business Ownership",
+                image: "/certificates/small-business-ownership.JPG",
+                alt: "Small Business Ownership Certificate"
+              },
+              {
+                title: "Small Business Operations",
+                image: "/certificates/small-business-operations.JPG",
+                alt: "Small Business Operations Certificate"
+              },
+              {
+                title: "Foundations of Business",
+                image: "/certificates/foundations-business.JPG",
+                alt: "Foundations of Business Certificate"
+              }
+            ].map((cert, index) => (
               <div key={index} className="group relative">
                 <div className="cyber-border bg-gray-900/50 p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                  <div className="w-full h-64 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl flex items-center justify-center border-2 border-dashed border-cyan-400/30 mb-4 relative overflow-hidden">
-                    <div className="absolute inset-0 cyber-grid opacity-10"></div>
-                    <div className="text-center text-cyan-400 relative z-10">
-                      <Award size={48} className="mx-auto mb-4 animate-cyber-pulse" />
-                      <p className="text-sm cyber-body">CERTIFICATE_INTERFACE</p>
-                      <div className="mt-2 flex justify-center space-x-1">
-                        <div className="w-2 h-2 bg-cyan-400 rounded animate-cyber-pulse"></div>
-                        <div className="w-2 h-2 bg-pink-400 rounded animate-cyber-pulse" style={{animationDelay: '0.5s'}}></div>
-                        <div className="w-2 h-2 bg-purple-400 rounded animate-cyber-pulse" style={{animationDelay: '1s'}}></div>
-                      </div>
-                    </div>
+                  <div className="w-full h-64 rounded-xl overflow-hidden mb-4 relative border-2 border-cyan-400/30">
+                    <img 
+                      src={cert.image}
+                      alt={cert.alt}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
                   <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors">
-                    {title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
+                    {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
                   </h3>
                 </div>
                 
