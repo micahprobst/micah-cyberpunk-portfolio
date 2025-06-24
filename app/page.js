@@ -182,13 +182,13 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 space-y-8">
               <div className="space-y-4">
-                <h1 className="text-7xl font-bold cyber-font break-words">
+                <h1 className="text-7xl font-bold cyber-font break-normal">
                   <span className={`bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent neon-text ${glitchActive ? 'glitch' : ''}`} 
                         data-text="MICAH PROBST">
                     MICAH PROBST
                   </span>
                 </h1>
-                <div className="text-2xl cyber-body font-light break-words">
+                <div className="text-2xl cyber-body font-light break-normal">
                   <span className="text-cyan-400 neon-text">PHILOSOPHY_GRADUATE</span>
                   <span className="text-pink-400 mx-2">|</span>
                   <span className="text-purple-400 neon-text">CRITICAL_THINKER</span>
@@ -233,21 +233,21 @@ export default function Home() {
       {/* Who Am I Section */}
       <section id="about" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400 break-words">
+          <h2 className="text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400 break-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
-          <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-words">
+          <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-normal">
             EARLY_ADOPTER <span className="text-pink-400">|</span> ETHICALLY_DEVOTED <span className="text-pink-400">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
           {/* Video Player */}
-          <div className="max-w-2xl mx-auto mb-12 relative">
+          <div className="max-w-4xl mx-auto mb-12 relative">
             <div className="cyber-border bg-gradient-to-b from-blue-900/30 via-green-900/30 to-green-600/30 rounded-2xl overflow-hidden relative shadow-lg border border-cyan-400/30">
               {/* Holographic Effect */}
               <div className="absolute inset-0 hologram pointer-events-none z-10"></div>
               
               <video 
-                className="w-full h-80 object-contain"
+                className="w-full aspect-video object-contain"
                 controls
                 poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
               >
@@ -312,7 +312,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
-                  <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">
+                  <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
                     {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
                   </h3>
                 </div>
@@ -349,9 +349,9 @@ export default function Home() {
                   <span className="text-red-400 neon-text">E</span>
                 </div>
                 <div className="space-y-3 cyber-body">
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_PROJECT_MANAGEMENT</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_DATA_ANALYTICS</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_PROJECT_MANAGEMENT</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
                 </div>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
@@ -365,7 +365,7 @@ export default function Home() {
                   AWS
                 </div>
                 <div className="bg-orange-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words">
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-normal">
                   SECURITY_COMPLIANCE_AND_GOVERNANCE_FOR_AI_SOLUTIONS
                 </p>
               </div>
@@ -383,7 +383,7 @@ export default function Home() {
                   <div className="text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
                 </div>
                 <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider">UNIVERSITY_OF_PENNSYLVANIA</div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words">
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-normal">
                   AI_FOR_BUSINESS_SPECIALIZATION
                 </p>
               </div>
@@ -428,22 +428,22 @@ export default function Home() {
                       <Calendar size={20} className="text-cyan-400 animate-cyber-pulse" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-words">
+                    <h3 className="text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
                       {item.title.toUpperCase().replace(/ /g, '_')}
                     </h3>
-                    <p className="text-purple-400 font-semibold mb-4 text-lg cyber-body break-words">
+                    <p className="text-purple-400 font-semibold mb-4 text-lg cyber-body break-normal">
                       {item.subtitle.toUpperCase().replace(/ /g, '_')}
                     </p>
                     <p className="text-cyan-100 mb-6 leading-relaxed cyber-body">{item.description}</p>
                     
                     {item.skills.length > 0 && (
                       <div className="pt-6 border-t border-cyan-400/30 relative z-10">
-                        <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-words">
+                        <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-normal">
                           {item.skillsLabel.toUpperCase().replace(/ /g, '_')}:
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {item.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-words">
+                            <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-normal">
                               {skill.toUpperCase().replace(/ /g, '_')}
                             </span>
                           ))}
@@ -482,7 +482,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5"></div>
               <Mail size={48} className="mx-auto mb-4 text-cyan-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
               <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors">EMAIL_INTERFACE</h3>
-              <p className="text-cyan-400 cyber-body text-sm tracking-wider">micah.x.probst@gmail.com</p>
+              <p className="text-cyan-400 cyber-body text-sm tracking-wider break-all">micah.x.probst@gmail.com</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
             </a>
             
@@ -494,8 +494,8 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-cyan-400/5"></div>
               <Linkedin size={48} className="mx-auto mb-4 text-blue-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
-              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors">LINKEDIN_PROTOCOL</h3>
-              <p className="text-blue-400 cyber-body text-sm tracking-wider">linkedin.com/in/micah-probst-b80009172</p>
+              <h3 className="text-xl font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">LINKEDIN_PROTOCOL</h3>
+              <p className="text-blue-400 cyber-body text-sm tracking-wider break-all">linkedin.com/in/micah-probst-b80009172</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
             </a>
             
