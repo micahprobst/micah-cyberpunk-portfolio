@@ -394,15 +394,31 @@ export default function Home() {
       </section>
 
       {/* Journey & Timeline Section */}
-      <section id="journey" className="py-20 bg-black relative z-10">
+      <section id="journey" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center mb-16">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="MY_JOURNEY.LOG">MY_JOURNEY.LOG</span>
           </h2>
-          <h3 className="text-2xl cyber-body mb-4 text-purple-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
+          <h3 className="text-xl md:text-2xl cyber-body mb-4 text-purple-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
           <p className="text-xl cyber-body leading-relaxed max-w-3xl mx-auto text-cyan-100">
             From (almost) testing out of high school at 15 to graduating with a philosophy degree at 19, here's how I've built a foundation of diverse experiences and continuous learning
           </p>
+          
+          {/* Resume Button */}
+          <div className="mt-12 text-center">
+            <a 
+              href="/documents/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-purple-600 text-black px-8 py-4 rounded-lg font-bold hover:from-cyan-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+              <svg className="w-5 h-5 mr-3 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd" />
+              </svg>
+              <span className="relative z-10">VIEW_RESUME.PDF</span>
+            </a>
+          </div>
         </div>
 
         {/* Timeline */}
@@ -520,7 +536,7 @@ export default function Home() {
             </p>
             <a 
               href="mailto:micah.x.probst@gmail.com" 
-              className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-cyan-600 text-black px-8 py-4 rounded font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative z-10 mx-auto"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-cyan-600 text-black px-4 md:px-8 py-3 md:py-4 rounded text-sm md:text-base font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative z-10 mx-auto"
             >
               INITIATE_CONVERSATION
               <ExternalLink size={20} className="ml-2" />
