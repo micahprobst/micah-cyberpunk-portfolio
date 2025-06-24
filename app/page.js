@@ -193,7 +193,7 @@ export default function Home() {
                   <span className="text-pink-400 mx-2">|</span>
                   <span className="text-purple-400 neon-text break-all">CRITICAL_THINKER</span>
                   <span className="text-pink-400 mx-2">|</span>
-                  <span className="text-cyan-400 neon-text break-all">PEOPLE_PERSON</span>
+                  <span className="text-cyan-400 neon-text whitespace-nowrap">PEOPLE_PERSON</span>
                 </div>
               </div>
               
@@ -412,7 +412,7 @@ export default function Home() {
             <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-pink-400 neon-glow"></div>
 
             {timelineItems.map((item, index) => (
-              <div key={index} className="relative flex items-center -mb-8">
+              <div key={index} className="relative flex items-center mb-8 md:-mb-8">
                 {/* Timeline Dot */}
                 <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${item.color} rounded-full border-4 border-black shadow-lg z-10 animate-cyber-pulse`}></div>
 
@@ -466,8 +466,11 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-pink-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">ESTABLISH_CONNECTION</span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-pink-400 leading-tight md:leading-normal">
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
+              <span className="block md:inline">ESTABLISH</span>
+              <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
+            </span>
           </h2>
           <p className="text-xl cyber-body mb-12 max-w-2xl mx-auto text-cyan-100">
             Ready to bring ethical AI implementation and strategic project management to your organization. 
@@ -517,7 +520,7 @@ export default function Home() {
             </p>
             <a 
               href="mailto:micah.x.probst@gmail.com" 
-              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-cyan-600 text-black px-8 py-4 rounded font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative z-10"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-cyan-600 text-black px-8 py-4 rounded font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative z-10 mx-auto"
             >
               INITIATE_CONVERSATION
               <ExternalLink size={20} className="ml-2" />
