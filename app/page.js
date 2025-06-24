@@ -269,7 +269,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
             {/* Beyond Binary Understanding Paper */}
             <a 
               href="/documents/beyond-binary-understanding.pdf" 
@@ -277,8 +277,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="group relative cursor-pointer block"
             >
-              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                <div className="w-full h-72 md:h-96 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
+                <div className="w-full h-80 md:h-[26rem] rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white aspect-[8.5/11]">
                   <img 
                     src="/images/beyond-binary-understanding-thumb.jpg"
                     alt="Beyond Binary Understanding - First Page"
@@ -303,7 +303,7 @@ export default function Home() {
                     BEYOND_BINARY_UNDERSTANDING
                   </h3>
                   <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
-                    Explores how artificial intelligence can transcend traditional binary thinking patterns to achieve more nuanced decision-making.
+                    Explores how artificial intelligence stacks up to traditional philosophical notions of understanding and proposes a more nuanced expansion of our concept of understanding.
                   </p>
                 </div>
               </div>
@@ -322,8 +322,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="group relative cursor-pointer block"
             >
-              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                <div className="w-full h-72 md:h-96 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
+                <div className="w-full h-80 md:h-[26rem] rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white aspect-[8.5/11]">
                   <img 
                     src="/images/ai-sycophancy-epistemic-vice-thumb.jpg"
                     alt="AI Sycophancy Epistemic Vice - First Page"
@@ -348,7 +348,7 @@ export default function Home() {
                     AI_SYCOPHANCY_EPISTEMIC_VICE
                   </h3>
                   <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
-                    Examines how AI systems can develop sycophantic behaviors that undermine genuine knowledge-seeking and critical thinking.
+                    Examines how AI systems can develop sycophantic behaviors from a technical perspective and discusses the broader implications of AI sycophancy.
                   </p>
                 </div>
               </div>
