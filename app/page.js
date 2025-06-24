@@ -2,20 +2,20 @@
 // Clean deployment - removed old static files
 
 import { useState, useEffect } from 'react';
-import { Mail, Linkedin, Phone, Calendar, ExternalLink, Zap } from 'lucide-react';
+import { Mail, Linkedin, Calendar, ExternalLink, Zap } from 'lucide-react';
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
   const [glitchActive, setGlitchActive] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
     
-    // Random glitch effects
+    // Random glitch effects - optimized for performance
     const glitchInterval = setInterval(() => {
-      setGlitchActive(true);
-      setTimeout(() => setGlitchActive(false), 200);
-    }, 3000 + Math.random() * 5000);
+      if (document.visibilityState === 'visible') {
+        setGlitchActive(true);
+        setTimeout(() => setGlitchActive(false), 200);
+      }
+    }, 5000 + Math.random() * 10000);
 
     return () => clearInterval(glitchInterval);
   }, []);
@@ -219,6 +219,10 @@ export default function Home() {
                     src="/images/hero-profile.jpg" 
                     alt="Micah Probst - Portfolio Photo"
                     className="w-full h-full object-cover"
+                    width={320}
+                    height={320}
+                    decoding="async"
+                    fetchPriority="high"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-600/20 to-pink-400/20"></div>
                 </div>
@@ -249,7 +253,9 @@ export default function Home() {
               <video 
                 className="w-full aspect-video object-contain"
                 controls
+                loading="lazy"
                 poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
+                preload="none"
               >
                 <source src="/videos/intro-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -283,6 +289,10 @@ export default function Home() {
                     src="/images/beyond-binary-understanding-thumb.jpg"
                     alt="Beyond Binary Understanding - First Page"
                     className="w-full h-full object-contain bg-white"
+                    width={400}
+                    height={518}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextElementSibling.style.display = 'flex';
@@ -328,6 +338,10 @@ export default function Home() {
                     src="/images/ai-sycophancy-epistemic-vice-thumb.jpg"
                     alt="AI Sycophancy Epistemic Vice - First Page"
                     className="w-full h-full object-contain bg-white"
+                    width={400}
+                    height={518}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextElementSibling.style.display = 'flex';
@@ -416,6 +430,10 @@ export default function Home() {
                       src={cert.image}
                       alt={cert.alt}
                       className="w-full h-full object-cover"
+                      width={400}
+                      height={256}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
