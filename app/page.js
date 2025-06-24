@@ -555,7 +555,7 @@ export default function Home() {
       <footer className="bg-black text-cyan-400 py-8 border-t border-cyan-400/30 relative z-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="cyber-body tracking-wider">
-            © 2025 MICAH_PROBST.EXE | Built with passion for ethical AI| 
+            © 2025 MICAH_PROBST.EXE | Built with passion for ethical AI | 
             <span className="text-pink-400 animate-cyber-pulse"> SYSTEM_ONLINE </span>
           </p>
         </div>
