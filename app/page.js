@@ -161,10 +161,10 @@ export default function Home() {
               </span>
             </div>
             <div className="hidden md:flex space-x-8 cyber-body">
-              {['HOME', 'WHO_AM_I', 'EDUCATION', 'CURRENT_WORK', 'JOURNEY', 'CONNECT'].map((item, index) => (
+              {['HOME', 'WHO_AM_I', 'PAPERS', 'EDUCATION', 'CURRENT_WORK', 'JOURNEY', 'CONNECT'].map((item, index) => (
                 <button 
                   key={item}
-                  onClick={() => scrollToSection(['hero', 'about', 'education', 'currently', 'journey', 'contact'][index])} 
+                  onClick={() => scrollToSection(['hero', 'about', 'papers', 'education', 'currently', 'journey', 'contact'][index])} 
                   className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider relative group break-normal"
                 >
                   <span className="relative z-10 break-all">{item}</span>
@@ -258,6 +258,97 @@ export default function Home() {
               {/* Cyberpunk overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-purple-600/5 to-pink-400/5 pointer-events-none"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Papers Section */}
+      <section id="papers" className="py-12 md:py-20 bg-gradient-to-br from-cyan-900/20 via-black to-purple-900/20 relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-8 md:mb-16 neon-text text-cyan-400 break-normal">
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+            {/* Beyond Binary Understanding Paper */}
+            <a 
+              href="/documents/beyond-binary-understanding.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative cursor-pointer block"
+            >
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+                  <img 
+                    src="/images/beyond-binary-understanding-thumb.jpg"
+                    alt="Beyond Binary Understanding - First Page"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center" style={{display: 'none'}}>
+                    <div className="text-gray-600 text-center">
+                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                      </svg>
+                      <p className="text-xs md:text-sm font-medium">PDF Preview</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
+                </div>
+                <h3 className="text-base md:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight">
+                  BEYOND_BINARY_UNDERSTANDING
+                </h3>
+              </div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+            </a>
+            
+            {/* AI Sycophancy Paper */}
+            <a 
+              href="/documents/ai-sycophancy-epistemic-vice.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative cursor-pointer block"
+            >
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+                  <img 
+                    src="/images/ai-sycophancy-epistemic-vice-thumb.jpg"
+                    alt="AI Sycophancy Epistemic Vice - First Page"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center" style={{display: 'none'}}>
+                    <div className="text-gray-600 text-center">
+                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                      </svg>
+                      <p className="text-xs md:text-sm font-medium">PDF Preview</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
+                </div>
+                <h3 className="text-base md:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight">
+                  AI_SYCOPHANCY_EPISTEMIC_VICE
+                </h3>
+              </div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+            </a>
           </div>
         </div>
       </section>
