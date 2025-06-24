@@ -214,13 +214,13 @@ export default function Home() {
             
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden relative neon-glow animate-cyber-pulse">
+                <div className="w-80 h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden relative animate-border-pulse">
                   <img 
                     src="/images/hero-profile.jpg" 
                     alt="Micah Probst - Portfolio Photo"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/10 to-pink-400/10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-600/20 to-pink-400/20"></div>
                 </div>
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded animate-cyber-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded animate-cyber-pulse" style={{animationDelay: '1s'}}></div>

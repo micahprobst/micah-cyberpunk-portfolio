@@ -22,6 +22,7 @@ module.exports = {
         'glitch-1': 'glitch-1 0.5s infinite',
         'glitch-2': 'glitch-2 0.5s infinite',
         'cyber-pulse': 'cyber-pulse 2s infinite',
+        'border-pulse': 'border-pulse 2s infinite',
         'floating': 'floating 6s ease-in-out infinite',
         'hologram-shine': 'hologram-shine 3s infinite',
       },
@@ -45,6 +46,16 @@ module.exports = {
         'cyber-pulse': {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
+        },
+        'border-pulse': {
+          '0%, 100%': { 
+            borderColor: 'rgb(34 211 238)', // cyan-400
+            boxShadow: '0 0 5px rgb(34 211 238), 0 0 10px rgb(34 211 238), 0 0 20px rgb(34 211 238)'
+          },
+          '50%': { 
+            borderColor: 'rgb(6 182 212)', // cyan-500  
+            boxShadow: '0 0 10px rgb(6 182 212), 0 0 20px rgb(6 182 212), 0 0 40px rgb(6 182 212)'
+          },
         },
         'floating': {
           '0%, 100%': { transform: 'translateY(0px)' },
