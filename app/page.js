@@ -403,7 +403,13 @@ export default function Home() {
                 alt: "Foundations of Business Certificate"
               }
             ].map((cert, index) => (
-              <div key={index} className="group relative">
+              <a 
+                key={index} 
+                href={cert.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative cursor-pointer block"
+              >
                 <div className="cyber-border bg-gray-900/50 p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
                   <div className="w-full h-64 rounded-xl overflow-hidden mb-4 relative border-2 border-cyan-400/30">
                     <img 
@@ -423,7 +429,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
                 <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
