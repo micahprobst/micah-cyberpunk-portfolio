@@ -277,12 +277,12 @@ export default function Home() {
               rel="noopener noreferrer"
               className="group relative cursor-pointer block"
             >
-              <div className="cyber-border bg-gray-900/50 p-4 md:p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                <div className="w-full h-72 md:h-96 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
                   <img 
                     src="/images/beyond-binary-understanding-thumb.jpg"
                     alt="Beyond Binary Understanding - First Page"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-white"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextElementSibling.style.display = 'flex';
@@ -298,9 +298,14 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight">
-                  BEYOND_BINARY_UNDERSTANDING
-                </h3>
+                <div className="text-center">
+                  <h3 className="text-base md:text-lg font-bold cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight mb-2">
+                    BEYOND_BINARY_UNDERSTANDING
+                  </h3>
+                  <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
+                    Explores how artificial intelligence can transcend traditional binary thinking patterns to achieve more nuanced decision-making.
+                  </p>
+                </div>
               </div>
               
               {/* Corner accents */}
@@ -317,12 +322,12 @@ export default function Home() {
               rel="noopener noreferrer"
               className="group relative cursor-pointer block"
             >
-              <div className="cyber-border bg-gray-900/50 p-4 md:p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                <div className="w-full h-72 md:h-96 rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white">
                   <img 
                     src="/images/ai-sycophancy-epistemic-vice-thumb.jpg"
                     alt="AI Sycophancy Epistemic Vice - First Page"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-white"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextElementSibling.style.display = 'flex';
@@ -338,9 +343,14 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight">
-                  AI_SYCOPHANCY_EPISTEMIC_VICE
-                </h3>
+                <div className="text-center">
+                  <h3 className="text-base md:text-lg font-bold cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight mb-2">
+                    AI_SYCOPHANCY_EPISTEMIC_VICE
+                  </h3>
+                  <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
+                    Examines how AI systems can develop sycophantic behaviors that undermine genuine knowledge-seeking and critical thinking.
+                  </p>
+                </div>
               </div>
               
               {/* Corner accents */}
