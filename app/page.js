@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-black relative z-10">
+      <section id="education" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-purple-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="EDUCATION.SYS">EDUCATION.SYS</span>
