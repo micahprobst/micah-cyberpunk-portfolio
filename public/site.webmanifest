@@ -1,0 +1,21 @@
+{
+  "name": "Micah Probst Portfolio",
+  "short_name": "Micah Probst",
+  "description": "Philosophy Graduate & AI Ethics Specialist",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00ffff",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

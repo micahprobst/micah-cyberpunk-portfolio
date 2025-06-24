@@ -61,11 +61,17 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/images/hero-profile.jpg" as="image" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="icon" href="/images/favicon.png" />
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#00ffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className="font-body">
         {children}
