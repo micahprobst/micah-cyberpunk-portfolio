@@ -412,7 +412,7 @@ export default function Home() {
             <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-pink-400 neon-glow"></div>
 
             {timelineItems.map((item, index) => (
-              <div key={index} className="relative flex items-center mb-4">
+              <div key={index} className="relative flex items-center mb-1">
                 {/* Timeline Dot */}
                 <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${item.color} rounded-full border-4 border-black shadow-lg z-10 animate-cyber-pulse`}></div>
 
