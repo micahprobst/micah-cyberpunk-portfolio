@@ -303,7 +303,7 @@ export default function Home() {
                     BEYOND_BINARY_UNDERSTANDING
                   </h3>
                   <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
-                    Explores how artificial intelligence stacks up to traditional philosophical notions of understanding and proposes a more nuanced expansion of our concept of understanding.
+                    Explores how artificial intelligence stacks up to traditional philosophical notions of understanding, and proposes a more nuanced expansion of our concept of understanding.
                   </p>
                 </div>
               </div>
@@ -348,7 +348,7 @@ export default function Home() {
                     AI_SYCOPHANCY_EPISTEMIC_VICE
                   </h3>
                   <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
-                    Examines how AI systems can develop sycophantic behaviors from a technical perspective and discusses the broader implications of AI sycophancy.
+                    Examines how AI systems can develop sycophantic behaviors from a technical perspective, and discusses the broader implications of AI sycophancy.
                   </p>
                 </div>
               </div>
