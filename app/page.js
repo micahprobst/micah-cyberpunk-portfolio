@@ -125,7 +125,7 @@ export default function Home() {
       title: "The Next Chapter",
       subtitle: "TBD...",
       description: "I am now furthering my skills through certification courses and external personal study into the AI field and broader business operations.",
-      skills: ["AI for Business", "Google Data Analytics", "Google Project Management", "Google Cloud Data Analytics", "Security, Compliance, and Governance for AI Solutions"],
+      skills: ["AI for Business", "Google Data Analytics", "Google Project Management", "Google Cloud Data Analytics", "Security, Compliance, and Governance for AI Solutions", "Practical Deep Learning"],
       skillsLabel: "Certifications in progress",
       color: "from-pink-400 to-purple-500"
     }
@@ -460,7 +460,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">IN_PROGRESS...</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Google Certifications */}
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
@@ -513,6 +513,21 @@ export default function Home() {
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
+            </div>
+
+            {/* fast.ai Certification */}
+            <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
+              <div className="relative z-10">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold cyber-font mb-6 text-purple-400 neon-text">
+                  FAST.AI
+                </div>
+                <div className="bg-purple-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-all text-sm md:text-base">
+                  PRACTICAL_DEEP_LEARNING
+                </p>
+              </div>
+              <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded animate-cyber-pulse"></div>
             </div>
           </div>
         </div>
