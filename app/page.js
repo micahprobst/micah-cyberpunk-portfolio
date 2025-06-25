@@ -369,10 +369,10 @@ export default function Home() {
               </div>
               
               {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
             </a>
           </div>
         </div>
@@ -444,10 +444,10 @@ export default function Home() {
                 </div>
                 
                 {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-                <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+                <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-yellow-400 transition-colors"></div>
+                <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-yellow-400 transition-colors"></div>
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-yellow-400 transition-colors"></div>
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-yellow-400 transition-colors"></div>
               </a>
             ))}
           </div>
@@ -528,7 +528,7 @@ export default function Home() {
                   PRACTICAL DEEP LEARNING
                 </p>
               </div>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded animate-cyber-pulse"></div>
+              <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
             </div>
           </div>
         </div>
@@ -609,8 +609,8 @@ export default function Home() {
                     )}
                     
                     {/* Corner accents */}
-                    <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+                    <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-purple-400 transition-colors"></div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-purple-400 transition-colors"></div>
                   </div>
                 </div>
               </div>
