@@ -190,9 +190,9 @@ export default function Home() {
                 </h1>
                 <div className="text-lg md:text-xl lg:text-2xl cyber-body font-light break-normal">
                   <span className="text-cyan-400 neon-text break-all">PHILOSOPHY_GRADUATE</span>
-                  <span className="text-pink-400 mx-2">|</span>
+                  <span className="text-pink-300 mx-2">|</span>
                   <span className="text-purple-400 neon-text break-all">CRITICAL_THINKER</span>
-                  <span className="text-pink-400 mx-2">|</span>
+                  <span className="text-pink-300 mx-2">|</span>
                   <span className="text-cyan-400 neon-text whitespace-nowrap">PEOPLE_PERSON</span>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
           <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-normal">
-            EARLY_ADOPTER <span className="text-pink-400">|</span> ETHICALLY_DEVOTED <span className="text-pink-400">|</span> COMPLEXITY_INTERPRETER
+            EARLY_ADOPTER <span className="text-pink-300">|</span> ETHICALLY_DEVOTED <span className="text-pink-300">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
           {/* Video Player */}
@@ -320,10 +320,10 @@ export default function Home() {
               </div>
               
               {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
             </a>
             
             {/* AI Sycophancy Paper */}
