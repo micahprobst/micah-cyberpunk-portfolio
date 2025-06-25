@@ -248,11 +248,8 @@ export default function Home() {
           {/* Video Player */}
           <div className="max-w-4xl mx-auto mb-12 relative">
             <div className="cyber-border bg-gradient-to-b from-blue-900/30 via-green-900/30 to-green-600/30 rounded-2xl overflow-hidden relative shadow-lg border border-cyan-400/30">
-              {/* Holographic Effect */}
-              <div className="absolute inset-0 hologram pointer-events-none z-10"></div>
-              
               <video 
-                className="w-full aspect-video object-contain relative z-20"
+                className="w-full aspect-video object-contain"
                 controls
                 loading="lazy"
                 poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
@@ -261,9 +258,6 @@ export default function Home() {
                 <source src="/videos/intro-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              
-              {/* Cyberpunk overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-purple-600/5 to-pink-400/5 pointer-events-none"></div>
             </div>
           </div>
         </div>
