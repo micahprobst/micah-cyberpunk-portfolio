@@ -272,7 +272,7 @@ export default function Home() {
       {/* Papers Section */}
       <section id="papers" className="py-12 md:py-20 bg-gradient-to-br from-cyan-900/20 via-black to-purple-900/20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-8 md:mb-16 neon-text text-purple-400 break-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-8 md:mb-16 neon-text text-purple-500 break-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
           </h2>
           
@@ -457,7 +457,7 @@ export default function Home() {
       {/* Currently Working On Section */}
       <section id="currently" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-purple-400">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-purple-500">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">IN_PROGRESS...</span>
           </h2>
           
@@ -520,10 +520,10 @@ export default function Home() {
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
-                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-350 neon-text">
+                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-400 neon-text">
                   FAST.AI
                 </div>
-                <div className="bg-red-350 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
+                <div className="bg-red-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
                 <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
                   PRACTICAL DEEP LEARNING
                 </p>
@@ -623,7 +623,7 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-red-350 leading-tight md:leading-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-purple-500 leading-tight md:leading-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
               <span className="block md:inline">ESTABLISH</span>
               <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
@@ -641,9 +641,9 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5"></div>
               <Mail size={48} className="mx-auto mb-4 text-cyan-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
-              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 group-hover:text-cyan-400 transition-colors break-all text-center">EMAIL_INTERFACE</h3>
-              <p className="text-cyan-400 cyber-body text-xs tracking-wider break-all text-center">micah.x.probst@gmail.com</p>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
+              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 group-hover:text-red-400 transition-colors break-all text-center">EMAIL_INTERFACE</h3>
+              <p className="text-red-400 cyber-body text-xs tracking-wider break-all text-center">micah.x.probst@gmail.com</p>
+              <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
             </a>
             
             <a 
