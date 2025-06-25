@@ -520,10 +520,10 @@ export default function Home() {
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
-                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-400 neon-text">
+                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-300 neon-text">
                   FAST.AI
                 </div>
-                <div className="bg-red-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
+                <div className="bg-red-300 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
                 <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
                   PRACTICAL DEEP LEARNING
                 </p>
@@ -623,7 +623,7 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-purple-400 leading-tight md:leading-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-red-300 leading-tight md:leading-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
               <span className="block md:inline">ESTABLISH</span>
               <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
