@@ -466,7 +466,7 @@ export default function Home() {
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
-                <div className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-6 cyber-font">
+                <div className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl mb-6 cyber-font">
                   <span className="text-blue-400 neon-text">G</span>
                   <span className="text-red-400 neon-text">O</span>
                   <span className="text-yellow-400 neon-text">O</span>
