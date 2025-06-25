@@ -190,9 +190,9 @@ export default function Home() {
                 </h1>
                 <div className="text-lg md:text-xl lg:text-2xl cyber-body font-light break-normal">
                   <span className="text-cyan-400 neon-text break-all">PHILOSOPHY_GRADUATE</span>
-                  <span className="text-green-400 mx-2">|</span>
+                  <span className="text-pink-400 mx-2">|</span>
                   <span className="text-purple-400 neon-text break-all">CRITICAL_THINKER</span>
-                  <span className="text-green-400 mx-2">|</span>
+                  <span className="text-pink-400 mx-2">|</span>
                   <span className="text-cyan-400 neon-text whitespace-nowrap">PEOPLE_PERSON</span>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
           <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-normal">
-            EARLY_ADOPTER <span className="text-green-400">|</span> ETHICALLY_DEVOTED <span className="text-green-400">|</span> COMPLEXITY_INTERPRETER
+            EARLY_ADOPTER <span className="text-cyan-400">|</span> ETHICALLY_DEVOTED <span className="text-cyan-400">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
           {/* Video Player */}
@@ -537,7 +537,7 @@ export default function Home() {
       {/* Journey & Timeline Section */}
       <section id="journey" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center mb-16">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-blue-400">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-blue-500">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="MY_JOURNEY.LOG">MY_JOURNEY.LOG</span>
           </h2>
           <h3 className="text-xl md:text-2xl cyber-body mb-4 text-purple-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
