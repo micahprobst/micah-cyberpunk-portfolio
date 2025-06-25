@@ -623,7 +623,7 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-purple-500 leading-tight md:leading-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-purple-300 leading-tight md:leading-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
               <span className="block md:inline">ESTABLISH</span>
               <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
@@ -640,7 +640,7 @@ export default function Home() {
               className="group cyber-border bg-black/50 backdrop-blur-sm p-4 md:p-6 lg:p-8 border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5"></div>
-              <Mail size={48} className="mx-auto mb-4 text-cyan-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
+              <Mail size={48} className="mx-auto mb-4 text-red-400 group-hover:scale-110 transition-transform animate-cyber-pulse relative z-10" />
               <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 group-hover:text-red-400 transition-colors break-all text-center">EMAIL_INTERFACE</h3>
               <p className="text-red-400 cyber-body text-xs tracking-wider break-all text-center">micah.x.probst@gmail.com</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
