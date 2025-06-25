@@ -252,7 +252,7 @@ export default function Home() {
                 className="w-full aspect-video object-contain"
                 controls
                 loading="lazy"
-                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
+                poster="/images/video-thumb.png"
                 preload="metadata"
               >
                 <source src="/videos/intro-video.mp4" type="video/mp4" />
