@@ -272,7 +272,7 @@ export default function Home() {
       {/* Papers Section */}
       <section id="papers" className="py-12 md:py-20 bg-gradient-to-br from-cyan-900/20 via-black to-purple-900/20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-8 md:mb-16 neon-text text-purple-500 break-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-8 md:mb-16 neon-text text-orange-400 break-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
           </h2>
           
@@ -457,7 +457,7 @@ export default function Home() {
       {/* Currently Working On Section */}
       <section id="currently" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-purple-500">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-green-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">IN_PROGRESS...</span>
           </h2>
           
@@ -623,7 +623,7 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-purple-300 leading-tight md:leading-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-red-400 leading-tight md:leading-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
               <span className="block md:inline">ESTABLISH</span>
               <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
@@ -684,10 +684,10 @@ export default function Home() {
             </a>
             
             {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-pink-400"></div>
-            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-pink-400"></div>
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-pink-400"></div>
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-pink-400"></div>
+            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-400"></div>
+            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-400"></div>
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-400"></div>
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-400"></div>
           </div>
         </div>
       </section>
