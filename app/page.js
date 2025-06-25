@@ -646,6 +646,14 @@ export default function Home() {
               <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
             </a>
             
+            <div className="group cyber-border bg-black/50 backdrop-blur-sm p-4 md:p-6 lg:p-8 border border-cyan-400/30 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
+              <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
+              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 break-all text-center">LOCATION_DATA</h3>
+              <p className="text-green-400 cyber-body text-xs tracking-wider text-center">Boulder, Colorado</p>
+              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
+            </div>
+            
             <a 
               href="https://www.linkedin.com/in/micah-probst-b80009172/" 
               target="_blank" 
@@ -658,14 +666,6 @@ export default function Home() {
               <p className="text-blue-400 cyber-body text-xs tracking-wider break-all text-center">linkedin.com/in/micah-probst-b80009172</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
             </a>
-            
-            <div className="group cyber-border bg-black/50 backdrop-blur-sm p-4 md:p-6 lg:p-8 border border-cyan-400/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
-              <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
-              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 break-all text-center">LOCATION_DATA</h3>
-              <p className="text-green-400 cyber-body text-xs tracking-wider text-center">Boulder, Colorado</p>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
-            </div>
           </div>
 
           <div className="cyber-border bg-black/50 backdrop-blur-sm p-8 border border-cyan-400/30 relative overflow-hidden">
