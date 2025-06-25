@@ -242,7 +242,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
           <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-normal">
-            EARLY_ADOPTER <span className="text-cyan-400">|</span> ETHICALLY_DEVOTED <span className="text-cyan-400">|</span> COMPLEXITY_INTERPRETER
+            EARLY_ADOPTER <span className="text-pink-400">|</span> ETHICALLY_DEVOTED <span className="text-pink-400">|</span> COMPLEXITY_INTERPRETER
           </h3>
           
           {/* Video Player */}
@@ -537,7 +537,7 @@ export default function Home() {
       {/* Journey & Timeline Section */}
       <section id="journey" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center mb-16">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-blue-500">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-pink-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="MY_JOURNEY.LOG">MY_JOURNEY.LOG</span>
           </h2>
           <h3 className="text-xl md:text-2xl cyber-body mb-4 text-purple-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
@@ -623,7 +623,7 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-purple-900/50 to-black text-cyan-100 relative z-10">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-red-400 leading-tight md:leading-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 cyber-font neon-text text-blue-400 leading-tight md:leading-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ESTABLISH_CONNECTION">
               <span className="block md:inline">ESTABLISH</span>
               <span className="block md:inline md:before:content-['_'] md:before:mx-1">CONNECTION</span>
