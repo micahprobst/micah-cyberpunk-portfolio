@@ -204,9 +204,9 @@ export default function Home() {
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400"></div>
                 
                 <p className="text-lg cyber-body leading-relaxed text-cyan-100">
-                  I'm <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications </strong> 
-                  acquired during my associates degree. I've done all this at <strong>19</strong>, and I'm not stopping. I'm currently working toward
-                  certifications in <strong>project management, data analytics, and AI governance.</strong> My goal is to apply my analytical and organizational
+                  My name is <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications </strong> 
+                  acquired during my associates degree. I've done all this at <strong>19</strong>, and I'm not stopping. My current focus is on
+                  certifications in <strong>project management, data analytics, and AI governance,</strong> and my goal is to apply my analytical and organizational
                   skills to help create a more efficient and responsibly AI-powered future of work.
                 </p>
               </div>
@@ -214,17 +214,18 @@ export default function Home() {
             
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden relative animate-border-pulse">
+                <div className="w-80 h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden relative animate-border-pulse" style={{boxShadow: '0 0 40px rgba(0, 255, 255, 0.3), 0 0 80px rgba(0, 255, 255, 0.1)'}}>
                   <img 
                     src="/images/hero-profile.jpg" 
                     alt="Micah Probst - Portfolio Photo"
                     className="w-full h-full object-cover"
+                    style={{filter: 'contrast(1.1) brightness(1.05) saturate(1.1)'}}
                     width={320}
                     height={320}
                     decoding="async"
                     fetchPriority="high"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-600/20 to-pink-400/20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 via-purple-600/8 to-pink-400/8"></div>
                 </div>
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded animate-cyber-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded animate-cyber-pulse" style={{animationDelay: '1s'}}></div>
@@ -671,7 +672,7 @@ export default function Home() {
             <div className="absolute inset-0 cyber-grid opacity-5"></div>
             <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 cyber-font text-purple-400 neon-text relative z-10 break-all">READY_TO_MAKE_IMPACT</h3>
             <p className="text-cyan-100 mb-6 cyber-body relative z-10">
-              I am seeking project management opportunities in the <strong>Denver/Boulder/Fort Collins</strong> area where I can apply my unique combination 
+              I am seeking opportunities in the <strong>Denver/Boulder/Fort Collins</strong> area where I can apply my unique combination 
               of philosophical thinking, business acumen, and AI ethics expertise.
             </p>
             <a 
