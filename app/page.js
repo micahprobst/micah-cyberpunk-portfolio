@@ -252,7 +252,7 @@ export default function Home() {
               <div className="absolute inset-0 hologram pointer-events-none z-10"></div>
               
               <video 
-                className="w-full aspect-video object-contain"
+                className="w-full aspect-video object-contain relative z-20"
                 controls
                 loading="lazy"
                 poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23001122' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2300ffff' opacity='0.8'/%3E%3Cpolygon points='190,135 190,165 215,150' fill='%23000'/%3E%3C/svg%3E"
