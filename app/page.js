@@ -520,10 +520,10 @@ export default function Home() {
             <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
               <div className="relative z-10">
-                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-purple-400 neon-text">
+                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-400 neon-text">
                   FAST.AI
                 </div>
-                <div className="bg-purple-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
+                <div className="bg-red-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
                 <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
                   PRACTICAL DEEP LEARNING
                 </p>
