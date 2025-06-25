@@ -238,7 +238,7 @@ export default function Home() {
       {/* Who Am I Section */}
       <section id="about" className="py-20 bg-gray-900/30 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-cyan-400 break-normal">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-blue-400 break-normal">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="WHO_AM_I?">WHO_AM_I?</span>
           </h2>
           <h3 className="text-2xl font-semibold cyber-body mb-12 text-purple-400 break-normal">
@@ -381,7 +381,7 @@ export default function Home() {
       {/* Education Section */}
       <section id="education" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-cyan-400">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-yellow-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="EDUCATION.SYS">EDUCATION.SYS</span>
           </h2>
           
@@ -646,14 +646,6 @@ export default function Home() {
               <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
             </a>
             
-            <div className="group cyber-border bg-black/50 backdrop-blur-sm p-4 md:p-6 lg:p-8 border border-cyan-400/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
-              <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
-              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 break-all text-center">LOCATION_DATA</h3>
-              <p className="text-green-400 cyber-body text-xs tracking-wider text-center">Boulder, Colorado</p>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
-            </div>
-            
             <a 
               href="https://www.linkedin.com/in/micah-probst-b80009172/" 
               target="_blank" 
@@ -666,6 +658,14 @@ export default function Home() {
               <p className="text-blue-400 cyber-body text-xs tracking-wider break-all text-center">linkedin.com/in/micah-probst-b80009172</p>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
             </a>
+            
+            <div className="group cyber-border bg-black/50 backdrop-blur-sm p-4 md:p-6 lg:p-8 border border-cyan-400/30 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5"></div>
+              <Zap size={48} className="mx-auto mb-4 text-green-400 animate-cyber-pulse relative z-10" />
+              <h3 className="text-lg font-bold mb-2 cyber-font text-cyan-100 break-all text-center">LOCATION_DATA</h3>
+              <p className="text-green-400 cyber-body text-xs tracking-wider text-center">Boulder, Colorado</p>
+              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
+            </div>
           </div>
 
           <div className="cyber-border bg-black/50 backdrop-blur-sm p-8 border border-cyan-400/30 relative overflow-hidden">
