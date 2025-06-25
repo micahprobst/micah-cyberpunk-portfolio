@@ -474,9 +474,9 @@ export default function Home() {
                   <span className="text-red-400 neon-text">E</span>
                 </div>
                 <div className="space-y-3 cyber-body">
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors whitespace-nowrap text-sm md:text-base">PROFESSIONAL_PROJECT_MANAGEMENT</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors whitespace-nowrap text-sm md:text-base">PROFESSIONAL_DATA_ANALYTICS</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors whitespace-nowrap text-sm md:text-base">PROFESSIONAL_CLOUD_DATA_ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL PROJECT MANAGEMENT</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL DATA ANALYTICS</p>
+                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL CLOUD DATA ANALYTICS</p>
                 </div>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
@@ -490,8 +490,8 @@ export default function Home() {
                   AWS
                 </div>
                 <div className="bg-orange-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body whitespace-nowrap text-sm md:text-base">
-                  SECURITY_COMPLIANCE_AND_GOVERNANCE_FOR_AI_SOLUTIONS
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
+                  SECURITY COMPLIANCE AND GOVERNANCE FOR AI SOLUTIONS
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-orange-400 rounded animate-cyber-pulse"></div>
@@ -507,9 +507,9 @@ export default function Home() {
                   </div>
                   <div className="text-xl md:text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
                 </div>
-                <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider whitespace-nowrap">UNIVERSITY_OF_PENNSYLVANIA</div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body whitespace-nowrap text-sm md:text-base">
-                  AI_FOR_BUSINESS_SPECIALIZATION
+                <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider break-words">UNIVERSITY OF PENNSYLVANIA</div>
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
+                  AI FOR BUSINESS SPECIALIZATION
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
@@ -523,8 +523,8 @@ export default function Home() {
                   FAST.AI
                 </div>
                 <div className="bg-purple-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body whitespace-nowrap text-sm md:text-base">
-                  PRACTICAL_DEEP_LEARNING
+                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
+                  PRACTICAL DEEP LEARNING
                 </p>
               </div>
               <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded animate-cyber-pulse"></div>
