@@ -540,7 +540,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold cyber-font mb-8 neon-text text-pink-400">
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="MY_JOURNEY.LOG">MY_JOURNEY.LOG</span>
           </h2>
-          <h3 className="text-xl md:text-2xl cyber-body mb-4 text-purple-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
+          <h3 className="text-xl md:text-2xl cyber-body mb-4 text-cyan-400 break-all">LEARNING_FROM_EVERY_OPPORTUNITY</h3>
           <p className="text-xl cyber-body leading-relaxed max-w-3xl mx-auto text-cyan-100">
             From (almost) testing out of high school at 15 to graduating with a philosophy degree at 19, here's how I've built a foundation of diverse experiences and continuous learning
           </p>
