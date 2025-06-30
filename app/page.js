@@ -70,7 +70,7 @@ export default function Home() {
       date: "May 2023",
       title: "Complete Associates Degree", 
       subtitle: "Front Range Community College",
-      description: "Graduated Front Range Community College with a specialization in business, 4.61 GPA, and 73 transferable college credits.",
+      description: "Graduated Front Range Community College with a specialization in business, 4.59 GPA, and 77 transferable college credits.",
       skills: ["Small Business Operation", "Small Business Ownership", "Ownership & Foundations of Business"],
       skillsLabel: "Certificates earned",
       color: "from-blue-400 to-indigo-500"
