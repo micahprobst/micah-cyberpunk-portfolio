@@ -26,6 +26,41 @@ export default function Home() {
     return () => clearInterval(glitchInterval);
   }, []);
 
+  // Certificate data structure - raw data before sorting
+  const rawCertificateData = {
+    aiEthics: [
+      { name: "Ethics and AI: A Philosophical Guide to Responsible Use", institution: "Northeastern University", image: "/certificates/ethics-ai.png", inProgress: false },
+      { name: "AI, Empathy & Ethics", institution: "UC Santa Cruz", image: "/certificates/ai-empathy.png", inProgress: false },
+      { name: "Introduction to Responsible AI", institution: "Google Cloud", image: "/certificates/responsible-ai-intro.png", inProgress: false },
+      { name: "Introduction to Security in the World of AI", institution: "Google Cloud", image: "/certificates/security-ai-intro.png", inProgress: false },
+      { name: "Responsible AI for Developers: Fairness & Bias", institution: "Google Cloud", image: null, inProgress: true },
+      { name: "Data Ethics, AI and Responsible Innovation", institution: "University of Edinburgh", image: null, inProgress: true },
+      { name: "AI Strategy & Governance", institution: "University of Pennsylvania", image: null, inProgress: true },
+      { name: "AI: Ethics & Societal Challenges", institution: "Lund University", image: null, inProgress: true },
+      { name: "Big Data, AI, and Ethics", institution: "UC Davis", image: null, inProgress: true }
+    ],
+    business: [
+      { name: "The Economics of AI", institution: "University of Virginia", image: null, inProgress: true },
+      { name: "AI for Business", institution: "University of Pennsylvania", image: null, inProgress: true },
+      { name: "AI, Business, & The Future of Work", institution: "Lund University", image: null, inProgress: true },
+      { name: "Specialization in Business", institution: "Front Range Community College", image: "/certificates/business-specialization.JPG", inProgress: false },
+      { name: "Foundations of Business", institution: "Front Range Community College", image: "/certificates/foundations-business.JPG", inProgress: false },
+      { name: "Small Business Operations", institution: "Front Range Community College", image: "/certificates/small-business-operations.JPG", inProgress: false },
+      { name: "Small Business Ownership", institution: "Front Range Community College", image: "/certificates/small-business-ownership.JPG", inProgress: false }
+    ],
+    projectManagement: [
+      { name: "Project Management Fundamentals", institution: "Google", image: null, inProgress: true },
+      { name: "AI Product Manager Specialization", institution: "Microsoft", image: null, inProgress: true },
+      { name: "AI Product Management Specialization", institution: "Duke", image: null, inProgress: true }
+    ],
+    technicalSkills: [
+      { name: "AI Agents and Agentic AI in Python Specialization", institution: "Vanderbilt University", image: null, inProgress: true },
+      { name: "Professional Data Analytics", institution: "Google", image: null, inProgress: true },
+      { name: "Professional Cloud Data Analytics", institution: "Google Cloud", image: null, inProgress: true },
+      { name: "Practical Deep Learning for Coders", institution: "fast.ai", image: null, inProgress: true }
+    ]
+  };
+
   const timelineItems = [
     {
       date: "AUG 2019",
@@ -139,41 +174,6 @@ export default function Home() {
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Certificate data structure - raw data before sorting
-  const rawCertificateData = {
-    aiEthics: [
-      { name: "Ethics and AI: A Philosophical Guide to Responsible Use", institution: "Northeastern University", image: "/certificates/ethics-ai.png", inProgress: false },
-      { name: "AI, Empathy & Ethics", institution: "UC Santa Cruz", image: "/certificates/ai-empathy.png", inProgress: false },
-      { name: "Introduction to Responsible AI", institution: "Google Cloud", image: "/certificates/responsible-ai-intro.png", inProgress: false },
-      { name: "Introduction to Security in the World of AI", institution: "Google Cloud", image: "/certificates/security-ai-intro.png", inProgress: false },
-      { name: "Responsible AI for Developers: Fairness & Bias", institution: "Google Cloud", image: null, inProgress: true },
-      { name: "Data Ethics, AI and Responsible Innovation", institution: "University of Edinburgh", image: null, inProgress: true },
-      { name: "AI Strategy & Governance", institution: "University of Pennsylvania", image: null, inProgress: true },
-      { name: "AI: Ethics & Societal Challenges", institution: "Lund University", image: null, inProgress: true },
-      { name: "Big Data, AI, and Ethics", institution: "UC Davis", image: null, inProgress: true }
-    ],
-    business: [
-      { name: "The Economics of AI", institution: "University of Virginia", image: null, inProgress: true },
-      { name: "AI for Business", institution: "University of Pennsylvania", image: null, inProgress: true },
-      { name: "AI, Business, & The Future of Work", institution: "Lund University", image: null, inProgress: true },
-      { name: "Specialization in Business", institution: "Front Range Community College", image: "/certificates/business-specialization.JPG", inProgress: false },
-      { name: "Foundations of Business", institution: "Front Range Community College", image: "/certificates/foundations-business.JPG", inProgress: false },
-      { name: "Small Business Operations", institution: "Front Range Community College", image: "/certificates/small-business-operations.JPG", inProgress: false },
-      { name: "Small Business Ownership", institution: "Front Range Community College", image: "/certificates/small-business-ownership.JPG", inProgress: false }
-    ],
-    projectManagement: [
-      { name: "Project Management Fundamentals", institution: "Google", image: null, inProgress: true },
-      { name: "AI Product Manager Specialization", institution: "Microsoft", image: null, inProgress: true },
-      { name: "AI Product Management Specialization", institution: "Duke", image: null, inProgress: true }
-    ],
-    technicalSkills: [
-      { name: "AI Agents and Agentic AI in Python Specialization", institution: "Vanderbilt University", image: null, inProgress: true },
-      { name: "Professional Data Analytics", institution: "Google", image: null, inProgress: true },
-      { name: "Professional Cloud Data Analytics", institution: "Google Cloud", image: null, inProgress: true },
-      { name: "Practical Deep Learning for Coders", institution: "fast.ai", image: null, inProgress: true }
-    ]
   };
 
   // Function to sort certificates: files first, then in progress
