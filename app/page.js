@@ -2,10 +2,16 @@
 // Clean deployment - removed old static files
 
 import { useState, useEffect } from 'react';
-import { Mail, Linkedin, Calendar, ExternalLink, Zap } from 'lucide-react';
+import { Mail, Linkedin, Calendar, ExternalLink, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
   const [glitchActive, setGlitchActive] = useState(false);
+  const [carouselPositions, setCarouselPositions] = useState({
+    aiEthics: 0,
+    business: 0,
+    projectManagement: 0,
+    technicalSkills: 0
+  });
 
   useEffect(() => {
     
@@ -135,6 +141,114 @@ export default function Home() {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Certificate data structure - raw data before sorting
+  const rawCertificateData = {
+    aiEthics: [
+      { name: "Ethics and AI: A Philosophical Guide to Responsible Use", institution: "Northeastern University", image: "/certificates/ethics-ai.png", inProgress: false },
+      { name: "AI, Empathy & Ethics", institution: "UC Santa Cruz", image: "/certificates/ai-empathy.png", inProgress: false },
+      { name: "Introduction to Responsible AI", institution: "Google Cloud", image: "/certificates/responsible-ai-intro.png", inProgress: false },
+      { name: "Introduction to Security in the World of AI", institution: "Google Cloud", image: "/certificates/security-ai-intro.png", inProgress: false },
+      { name: "Responsible AI for Developers: Fairness & Bias", institution: "Google Cloud", image: null, inProgress: true },
+      { name: "Data Ethics, AI and Responsible Innovation", institution: "University of Edinburgh", image: null, inProgress: true },
+      { name: "AI Strategy & Governance", institution: "University of Pennsylvania", image: null, inProgress: true },
+      { name: "AI: Ethics & Societal Challenges", institution: "Lund University", image: null, inProgress: true },
+      { name: "Big Data, AI, and Ethics", institution: "UC Davis", image: null, inProgress: true }
+    ],
+    business: [
+      { name: "The Economics of AI", institution: "University of Virginia", image: null, inProgress: true },
+      { name: "AI for Business", institution: "University of Pennsylvania", image: null, inProgress: true },
+      { name: "AI, Business, & The Future of Work", institution: "Lund University", image: null, inProgress: true },
+      { name: "Specialization in Business", institution: "Front Range Community College", image: "/certificates/business-specialization.JPG", inProgress: false },
+      { name: "Foundations of Business", institution: "Front Range Community College", image: "/certificates/foundations-business.JPG", inProgress: false },
+      { name: "Small Business Operations", institution: "Front Range Community College", image: "/certificates/small-business-operations.JPG", inProgress: false },
+      { name: "Small Business Ownership", institution: "Front Range Community College", image: "/certificates/small-business-ownership.JPG", inProgress: false }
+    ],
+    projectManagement: [
+      { name: "Project Management Fundamentals", institution: "Google", image: null, inProgress: true },
+      { name: "AI Product Manager Specialization", institution: "Microsoft", image: null, inProgress: true },
+      { name: "AI Product Management Specialization", institution: "Duke", image: null, inProgress: true }
+    ],
+    technicalSkills: [
+      { name: "AI Agents and Agentic AI in Python Specialization", institution: "Vanderbilt University", image: null, inProgress: true },
+      { name: "Professional Data Analytics", institution: "Google", image: null, inProgress: true },
+      { name: "Professional Cloud Data Analytics", institution: "Google Cloud", image: null, inProgress: true },
+      { name: "Practical Deep Learning for Coders", institution: "fast.ai", image: null, inProgress: true }
+    ]
+  };
+
+  // Function to sort certificates: files first, then in progress
+  const sortCertificates = (certificates) => {
+    return [...certificates].sort((a, b) => {
+      // If one has an image and the other doesn't, prioritize the one with image
+      if (a.image && !b.image) return -1;
+      if (!a.image && b.image) return 1;
+      // If both have images or both don't have images, maintain original order
+      return 0;
+    });
+  };
+
+  // Sorted certificate data - certificates with files appear first
+  const certificateData = {
+    aiEthics: sortCertificates(rawCertificateData.aiEthics),
+    business: sortCertificates(rawCertificateData.business),
+    projectManagement: sortCertificates(rawCertificateData.projectManagement),
+    technicalSkills: sortCertificates(rawCertificateData.technicalSkills)
+  };
+
+  const handleCarouselNext = (section) => {
+    setCarouselPositions(prev => ({
+      ...prev,
+      [section]: (prev[section] + 1) % certificateData[section].length
+    }));
+  };
+
+  const handleCarouselPrev = (section) => {
+    setCarouselPositions(prev => ({
+      ...prev,
+      [section]: prev[section] === 0 ? certificateData[section].length - 1 : prev[section] - 1
+    }));
+  };
+
+  const renderCertificateCard = (section, colorClass) => {
+    const certificates = certificateData[section];
+    const currentIndex = carouselPositions[section];
+    const certificate = certificates[currentIndex];
+    
+    return (
+      <div className={`cyber-border bg-gray-900/50 p-6 md:p-8 border border-${colorClass}-400/30 hover:border-${colorClass}-400 hover:neon-glow transition-all relative overflow-hidden`}>
+        <div className={`absolute inset-0 bg-gradient-to-br from-${colorClass}-400/5 to-purple-400/5`}></div>
+        <div className="relative z-10 text-center">
+          {certificate.image ? (
+            <div className={`w-full h-64 md:h-80 rounded-xl overflow-hidden mb-4 relative border-2 border-${colorClass}-400/30`}>
+              <img 
+                src={certificate.image}
+                alt={certificate.name}
+                className="w-full h-full object-cover"
+                width={400}
+                height={320}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className={`absolute inset-0 bg-gradient-to-br from-${colorClass}-400/10 via-purple-600/5 to-pink-400/10`}></div>
+            </div>
+          ) : (
+            <div className="mb-4">
+              <div className="text-lg md:text-xl font-bold cyber-body text-cyan-100 mb-4 break-words px-2">
+                {certificate.name.toUpperCase().replace(/ /g, '_')}
+              </div>
+              <div className={`text-sm md:text-base cyber-body text-${colorClass}-400 break-words px-2`}>
+                {certificate.institution.toUpperCase().replace(/ /g, '_')}
+              </div>
+              {certificate.inProgress && (
+                <div className="text-sm text-cyan-300 mt-2 tracking-wider">IN PROGRESS</div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-black text-cyan-100 overflow-x-hidden">
       {/* Animated Background */}
@@ -161,10 +275,10 @@ export default function Home() {
               </span>
             </div>
             <div className="hidden md:flex space-x-8 cyber-body">
-              {['HOME', 'WHO_AM_I', 'PAPERS', 'EDUCATION', 'CURRENT_WORK', 'JOURNEY', 'CONNECT'].map((item, index) => (
+              {['HOME', 'WHO_AM_I', 'PAPERS', 'DEGREES', 'CERTIFICATIONS', 'JOURNEY', 'CONNECT'].map((item, index) => (
                 <button 
                   key={item}
-                  onClick={() => scrollToSection(['hero', 'about', 'papers', 'education', 'currently', 'journey', 'contact'][index])} 
+                  onClick={() => scrollToSection(['hero', 'about', 'papers', 'degrees', 'certifications', 'journey', 'contact'][index])} 
                   className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider relative group break-normal"
                 >
                   <span className="relative z-10 break-all">{item}</span>
@@ -373,13 +487,13 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
+      <section id="degrees" className="py-20 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-yellow-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="EDUCATION.SYS">EDUCATION.SYS</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="DEGREES.DB">DEGREES.DB</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 max-w-7xl mx-auto">
             {[
               {
                 title: "Bachelor's of Philosophy",
@@ -390,26 +504,6 @@ export default function Home() {
                 title: "Associates of Arts",
                 image: "/certificates/associates-arts.JPG",
                 alt: "Associates of Arts Certificate"
-              },
-              {
-                title: "Specialization in Business",
-                image: "/certificates/business-specialization.JPG",
-                alt: "Business Specialization Certificate"
-              },
-              {
-                title: "Small Business Ownership",
-                image: "/certificates/small-business-ownership.JPG",
-                alt: "Small Business Ownership Certificate"
-              },
-              {
-                title: "Small Business Operations",
-                image: "/certificates/small-business-operations.JPG",
-                alt: "Small Business Operations Certificate"
-              },
-              {
-                title: "Foundations of Business",
-                image: "/certificates/foundations-business.JPG",
-                alt: "Foundations of Business Certificate"
               }
             ].map((cert, index) => (
               <a 
@@ -419,20 +513,20 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group relative cursor-pointer block"
               >
-                <div className="cyber-border bg-gray-900/50 p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
-                  <div className="w-full h-64 rounded-xl overflow-hidden mb-4 relative border-2 border-cyan-400/30">
+                <div className="cyber-border bg-gray-900/50 p-4 md:p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                  <div className="w-full aspect-[5/4] rounded-lg overflow-hidden mb-4 relative border-2 border-cyan-400/30 bg-white">
                     <img 
                       src={cert.image}
                       alt={cert.alt}
                       className="w-full h-full object-cover"
-                      width={400}
-                      height={256}
+                      width={500}
+                      height={400}
                       loading="lazy"
                       decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                   </div>
-                  <h3 className="text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all">
+                  <h3 className="text-lg md:text-xl font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all">
                     {cert.title.toUpperCase().replace(/'/g, '').replace(/ /g, '_')}
                   </h3>
                 </div>
@@ -449,80 +543,459 @@ export default function Home() {
       </section>
 
       {/* Currently Working On Section */}
-      <section id="currently" className="py-20 bg-gray-900/30 relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="certifications" className="py-20 bg-gray-900/30 relative z-10">
+        <div className="w-full">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center cyber-font mb-16 neon-text text-green-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CURRENT_PROCESSES...">IN_PROGRESS...</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CERTIFICATION.CSV">CERTIFICATION.CSV</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Google Certifications */}
-            <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
-              <div className="relative z-10">
-                <div className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl mb-6 cyber-font">
-                  <span className="text-blue-400 neon-text">G</span>
-                  <span className="text-red-400 neon-text">O</span>
-                  <span className="text-yellow-400 neon-text">O</span>
-                  <span className="text-blue-400 neon-text">G</span>
-                  <span className="text-green-400 neon-text">L</span>
-                  <span className="text-red-400 neon-text">E</span>
-                </div>
-                <div className="space-y-3 cyber-body">
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL PROJECT MANAGEMENT</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL DATA ANALYTICS</p>
-                  <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors break-words text-sm md:text-base">PROFESSIONAL CLOUD DATA ANALYTICS</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[2.5%] w-full mx-auto" style={{paddingLeft: '5%', paddingRight: '5%'}}>
+            {/* AI Ethics Section */}
+            <div className="space-y-8">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-cyan-400 mb-6">
+                AI_ETHICS
+              </h3>
+              <div className="relative">
+{(() => {
+                  const currentCert = certificateData.aiEthics[carouselPositions.aiEthics];
+                  return (
+                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                      {/* Certificate Image */}
+                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-cyan-400/30 bg-black">
+                        {currentCert.image ? (
+                          <a 
+                            href={currentCert.image}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            title="Click to view full size certificate"
+                          >
+                            <img 
+                              src={currentCert.image}
+                              alt={currentCert.name}
+                              className="w-full h-auto object-contain"
+                              loading="lazy"
+                              decoding="async"
+                              style={{
+                                imageRendering: 'crisp-edges',
+                                imageRendering: '-webkit-optimize-contrast',
+                                imageRendering: 'optimize-contrast',
+                                maxWidth: 'none',
+                                filter: 'contrast(1.1) brightness(1.05)'
+                              }}
+                            />
+                          </a>
+                        ) : (
+                          /* Enhanced Cyberpunk "In Progress" Graphic */
+                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                            {/* Animated background layers */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
+                            
+                            {/* Moving grid pattern */}
+                            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-cyan-400/20"
+                                style={{
+                                  backgroundImage: 'linear-gradient(cyan 1px, transparent 1px), linear-gradient(90deg, cyan 1px, transparent 1px)',
+                                  backgroundSize: '20px 20px',
+                                  animation: 'grid-move 10s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                            
+                            {/* Sliding bars */}
+                            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent animate-pulse" style={{top: '30%', animation: 'slide-horizontal 3s ease-in-out infinite'}}></div>
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" style={{top: '70%', animation: 'slide-horizontal 4s ease-in-out infinite reverse'}}></div>
+                            </div>
+                            
+                            <div className="relative z-10 text-center">
+                              <div className="text-cyan-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                                [ IN PROGRESS ]
+                              </div>
+                              <div className="flex items-center justify-center space-x-1">
+                                <div className="w-2 h-2 bg-cyan-400 rounded animate-ping"></div>
+                                <div className="w-2 h-2 bg-cyan-400 rounded animate-ping" style={{animationDelay: '0.5s'}}></div>
+                                <div className="w-2 h-2 bg-cyan-400 rounded animate-ping" style={{animationDelay: '1s'}}></div>
+                              </div>
+                              <div className="text-cyan-400/60 text-sm cyber-body mt-2 tracking-widest animate-pulse">
+                                PROCESSING...
+                              </div>
+                            </div>
+                            
+                            {/* Enhanced scan lines effect */}
+                            <div className="absolute inset-0 opacity-15 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent bg-repeat-y" 
+                                style={{
+                                  backgroundSize: '100% 4px',
+                                  animation: 'scan-lines 2s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Certificate Name */}
+                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words mb-2">
+                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </h4>
+                      {/* Issuing Institution */}
+                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-cyan-400 break-words">
+                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </p>
+                    </div>
+                  );
+                })()}
+                <button 
+                  onClick={() => handleCarouselPrev('aiEthics')}
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-cyan-400/20 hover:bg-cyan-400/40 p-1 rounded border border-cyan-400/30 hover:border-cyan-400 transition-all"
+                >
+                  <ChevronLeft size={16} className="text-cyan-400" />
+                </button>
+                <button 
+                  onClick={() => handleCarouselNext('aiEthics')}
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-cyan-400/20 hover:bg-cyan-400/40 p-1 rounded border border-cyan-400/30 hover:border-cyan-400 transition-all"
+                >
+                  <ChevronRight size={16} className="text-cyan-400" />
+                </button>
               </div>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded animate-cyber-pulse"></div>
             </div>
 
-            {/* AWS Certification */}
-            <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
-              <div className="relative z-10">
-                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-orange-400 neon-text">
-                  AWS
-                </div>
-                <div className="bg-orange-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
-                  SECURITY COMPLIANCE AND GOVERNANCE FOR AI SOLUTIONS
-                </p>
+            {/* Business Section */}
+            <div className="space-y-8">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-orange-400 mb-6">
+                BUSINESS
+              </h3>
+              <div className="relative">
+{(() => {
+                  const currentCert = certificateData.business[carouselPositions.business];
+                  return (
+                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-orange-400/30 hover:border-orange-400 transition-all hover:neon-glow">
+                      {/* Certificate Image */}
+                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-orange-400/30 bg-black">
+                        {currentCert.image ? (
+                          <a 
+                            href={currentCert.image}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            title="Click to view full size certificate"
+                          >
+                            <img 
+                              src={currentCert.image}
+                              alt={currentCert.name}
+                              className="w-full h-auto object-contain"
+                              loading="lazy"
+                              decoding="async"
+                              style={{
+                                imageRendering: 'crisp-edges',
+                                imageRendering: '-webkit-optimize-contrast',
+                                imageRendering: 'optimize-contrast',
+                                maxWidth: 'none',
+                                filter: 'contrast(1.1) brightness(1.05)'
+                              }}
+                            />
+                          </a>
+                        ) : (
+                          /* Enhanced Cyberpunk "In Progress" Graphic */
+                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                            {/* Animated background layers */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 via-red-600/5 to-pink-400/10"></div>
+                            
+                            {/* Moving grid pattern */}
+                            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-orange-400/20"
+                                style={{
+                                  backgroundImage: 'linear-gradient(orange 1px, transparent 1px), linear-gradient(90deg, orange 1px, transparent 1px)',
+                                  backgroundSize: '20px 20px',
+                                  animation: 'grid-move 10s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                            
+                            {/* Sliding bars */}
+                            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent animate-pulse" style={{top: '30%', animation: 'slide-horizontal 3s ease-in-out infinite'}}></div>
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-orange-400/30 to-transparent" style={{top: '70%', animation: 'slide-horizontal 4s ease-in-out infinite reverse'}}></div>
+                            </div>
+                            
+                            <div className="relative z-10 text-center">
+                              <div className="text-orange-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                                [ IN PROGRESS ]
+                              </div>
+                              <div className="flex items-center justify-center space-x-1">
+                                <div className="w-2 h-2 bg-orange-400 rounded animate-ping"></div>
+                                <div className="w-2 h-2 bg-orange-400 rounded animate-ping" style={{animationDelay: '0.5s'}}></div>
+                                <div className="w-2 h-2 bg-orange-400 rounded animate-ping" style={{animationDelay: '1s'}}></div>
+                              </div>
+                              <div className="text-orange-400/60 text-sm cyber-body mt-2 tracking-widest animate-pulse">
+                                PROCESSING...
+                              </div>
+                            </div>
+                            
+                            {/* Enhanced scan lines effect */}
+                            <div className="absolute inset-0 opacity-15 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-gradient-to-b from-transparent via-orange-400/20 to-transparent bg-repeat-y" 
+                                style={{
+                                  backgroundSize: '100% 4px',
+                                  animation: 'scan-lines 2s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Certificate Name */}
+                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-orange-400 transition-colors break-words mb-2">
+                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </h4>
+                      {/* Issuing Institution */}
+                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-orange-400 break-words">
+                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </p>
+                    </div>
+                  );
+                })()}
+                <button 
+                  onClick={() => handleCarouselPrev('business')}
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-orange-400/20 hover:bg-orange-400/40 p-1 rounded border border-orange-400/30 hover:border-orange-400 transition-all"
+                >
+                  <ChevronLeft size={16} className="text-orange-400" />
+                </button>
+                <button 
+                  onClick={() => handleCarouselNext('business')}
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-orange-400/20 hover:bg-orange-400/40 p-1 rounded border border-orange-400/30 hover:border-orange-400 transition-all"
+                >
+                  <ChevronRight size={16} className="text-orange-400" />
+                </button>
               </div>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-orange-400 rounded animate-cyber-pulse"></div>
             </div>
 
-            {/* Penn Certification */}
-            <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
-              <div className="relative z-10">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-12 h-12 bg-blue-800 rounded flex items-center justify-center mr-3 neon-glow">
-                    <span className="text-white font-bold text-xl cyber-font">U</span>
-                  </div>
-                  <div className="text-xl md:text-2xl font-bold text-blue-400 cyber-font neon-text">PENN</div>
-                </div>
-                <div className="text-xs text-cyan-400 mb-2 cyber-body tracking-wider break-words">UNIVERSITY OF PENNSYLVANIA</div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
-                  AI FOR BUSINESS SPECIALIZATION
-                </p>
+            {/* Project Management Section */}
+            <div className="space-y-8">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-blue-400 mb-6">
+                PROJECT_MGMT
+              </h3>
+              <div className="relative">
+{(() => {
+                  const currentCert = certificateData.projectManagement[carouselPositions.projectManagement];
+                  return (
+                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-blue-400/30 hover:border-blue-400 transition-all hover:neon-glow">
+                      {/* Certificate Image */}
+                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-blue-400/30 bg-black">
+                        {currentCert.image ? (
+                          <a 
+                            href={currentCert.image}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            title="Click to view full size certificate"
+                          >
+                            <img 
+                              src={currentCert.image}
+                              alt={currentCert.name}
+                              className="w-full h-auto object-contain"
+                              loading="lazy"
+                              decoding="async"
+                              style={{
+                                imageRendering: 'crisp-edges',
+                                imageRendering: '-webkit-optimize-contrast',
+                                imageRendering: 'optimize-contrast',
+                                maxWidth: 'none',
+                                filter: 'contrast(1.1) brightness(1.05)'
+                              }}
+                            />
+                          </a>
+                        ) : (
+                          /* Enhanced Cyberpunk "In Progress" Graphic */
+                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                            {/* Animated background layers */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-cyan-600/5 to-purple-400/10"></div>
+                            
+                            {/* Moving grid pattern */}
+                            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-blue-400/20"
+                                style={{
+                                  backgroundImage: 'linear-gradient(blue 1px, transparent 1px), linear-gradient(90deg, blue 1px, transparent 1px)',
+                                  backgroundSize: '20px 20px',
+                                  animation: 'grid-move 10s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                            
+                            {/* Sliding bars */}
+                            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-pulse" style={{top: '30%', animation: 'slide-horizontal 3s ease-in-out infinite'}}></div>
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" style={{top: '70%', animation: 'slide-horizontal 4s ease-in-out infinite reverse'}}></div>
+                            </div>
+                            
+                            <div className="relative z-10 text-center">
+                              <div className="text-blue-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                                [ IN PROGRESS ]
+                              </div>
+                              <div className="flex items-center justify-center space-x-1">
+                                <div className="w-2 h-2 bg-blue-400 rounded animate-ping"></div>
+                                <div className="w-2 h-2 bg-blue-400 rounded animate-ping" style={{animationDelay: '0.5s'}}></div>
+                                <div className="w-2 h-2 bg-blue-400 rounded animate-ping" style={{animationDelay: '1s'}}></div>
+                              </div>
+                              <div className="text-blue-400/60 text-sm cyber-body mt-2 tracking-widest animate-pulse">
+                                PROCESSING...
+                              </div>
+                            </div>
+                            
+                            {/* Enhanced scan lines effect */}
+                            <div className="absolute inset-0 opacity-15 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent bg-repeat-y" 
+                                style={{
+                                  backgroundSize: '100% 4px',
+                                  animation: 'scan-lines 2s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Certificate Name */}
+                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-blue-400 transition-colors break-words mb-2">
+                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </h4>
+                      {/* Issuing Institution */}
+                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-blue-400 break-words">
+                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </p>
+                    </div>
+                  );
+                })()}
+                <button 
+                  onClick={() => handleCarouselPrev('projectManagement')}
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-blue-400/20 hover:bg-blue-400/40 p-1 rounded border border-blue-400/30 hover:border-blue-400 transition-all"
+                >
+                  <ChevronLeft size={16} className="text-blue-400" />
+                </button>
+                <button 
+                  onClick={() => handleCarouselNext('projectManagement')}
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-blue-400/20 hover:bg-blue-400/40 p-1 rounded border border-blue-400/30 hover:border-blue-400 transition-all"
+                >
+                  <ChevronRight size={16} className="text-blue-400" />
+                </button>
               </div>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded animate-cyber-pulse"></div>
             </div>
 
-            {/* fast.ai Certification */}
-            <div className="cyber-border bg-black/50 p-4 md:p-6 lg:p-8 text-center border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black/50 to-gray-800/30"></div>
-              <div className="relative z-10">
-                <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold cyber-font mb-6 text-red-400 neon-text">
-                  FAST.AI
-                </div>
-                <div className="bg-red-400 h-1 w-16 mx-auto mb-6 animate-cyber-pulse"></div>
-                <p className="font-bold text-cyan-100 group-hover:text-cyan-400 transition-colors cyber-body break-words text-sm md:text-base">
-                  PRACTICAL DEEP LEARNING
-                </p>
+            {/* Technical Skills Section */}
+            <div className="space-y-8">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-red-400 mb-6">
+                TECHNICAL_SKILLS
+              </h3>
+              <div className="relative">
+{(() => {
+                  const currentCert = certificateData.technicalSkills[carouselPositions.technicalSkills];
+                  return (
+                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-red-400/30 hover:border-red-400 transition-all hover:neon-glow">
+                      {/* Certificate Image */}
+                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-red-400/30 bg-black">
+                        {currentCert.image ? (
+                          <a 
+                            href={currentCert.image}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            title="Click to view full size certificate"
+                          >
+                            <img 
+                              src={currentCert.image}
+                              alt={currentCert.name}
+                              className="w-full h-auto object-contain"
+                              loading="lazy"
+                              decoding="async"
+                              style={{
+                                imageRendering: 'crisp-edges',
+                                imageRendering: '-webkit-optimize-contrast',
+                                imageRendering: 'optimize-contrast',
+                                maxWidth: 'none',
+                                filter: 'contrast(1.1) brightness(1.05)'
+                              }}
+                            />
+                          </a>
+                        ) : (
+                          /* Enhanced Cyberpunk "In Progress" Graphic */
+                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                            {/* Animated background layers */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-red-400/10 via-pink-600/5 to-purple-400/10"></div>
+                            
+                            {/* Moving grid pattern */}
+                            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-red-400/20"
+                                style={{
+                                  backgroundImage: 'linear-gradient(red 1px, transparent 1px), linear-gradient(90deg, red 1px, transparent 1px)',
+                                  backgroundSize: '20px 20px',
+                                  animation: 'grid-move 10s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                            
+                            {/* Sliding bars */}
+                            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-red-400/50 to-transparent animate-pulse" style={{top: '30%', animation: 'slide-horizontal 3s ease-in-out infinite'}}></div>
+                              <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-red-400/30 to-transparent" style={{top: '70%', animation: 'slide-horizontal 4s ease-in-out infinite reverse'}}></div>
+                            </div>
+                            
+                            <div className="relative z-10 text-center">
+                              <div className="text-red-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                                [ IN PROGRESS ]
+                              </div>
+                              <div className="flex items-center justify-center space-x-1">
+                                <div className="w-2 h-2 bg-red-400 rounded animate-ping"></div>
+                                <div className="w-2 h-2 bg-red-400 rounded animate-ping" style={{animationDelay: '0.5s'}}></div>
+                                <div className="w-2 h-2 bg-red-400 rounded animate-ping" style={{animationDelay: '1s'}}></div>
+                              </div>
+                              <div className="text-red-400/60 text-sm cyber-body mt-2 tracking-widest animate-pulse">
+                                PROCESSING...
+                              </div>
+                            </div>
+                            
+                            {/* Enhanced scan lines effect */}
+                            <div className="absolute inset-0 opacity-15 pointer-events-none">
+                              <div 
+                                className="w-full h-full bg-gradient-to-b from-transparent via-red-400/20 to-transparent bg-repeat-y" 
+                                style={{
+                                  backgroundSize: '100% 4px',
+                                  animation: 'scan-lines 2s linear infinite'
+                                }}
+                              ></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Certificate Name */}
+                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-red-400 transition-colors break-words mb-2">
+                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </h4>
+                      {/* Issuing Institution */}
+                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-red-400 break-words">
+                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                      </p>
+                    </div>
+                  );
+                })()}
+                <button 
+                  onClick={() => handleCarouselPrev('technicalSkills')}
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-red-400/20 hover:bg-red-400/40 p-1 rounded border border-red-400/30 hover:border-red-400 transition-all"
+                >
+                  <ChevronLeft size={16} className="text-red-400" />
+                </button>
+                <button 
+                  onClick={() => handleCarouselNext('technicalSkills')}
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-red-400/20 hover:bg-red-400/40 p-1 rounded border border-red-400/30 hover:border-red-400 transition-all"
+                >
+                  <ChevronRight size={16} className="text-red-400" />
+                </button>
               </div>
-              <div className="absolute top-2 right-2 w-3 h-3 bg-red-400 rounded animate-cyber-pulse"></div>
             </div>
           </div>
         </div>

@@ -110,3 +110,36 @@ body {
   background: rgba(0, 255, 255, 0.3);
   color: #fff;
 }
+
+/* Cyberpunk Animation Keyframes */
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+@keyframes slide-horizontal {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes scan-lines {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
+  15%, 49% { transform: translate(-2px, -1px); }
+  50%, 99% { transform: translate(1px, -0.5px); }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
+  21%, 62% { transform: translate(2px, 1px); }
+  63%, 99% { transform: translate(-1px, 0.5px); }
+}
+
+@keyframes hologram-shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
