@@ -49,7 +49,7 @@ export default function Home() {
       { name: "Small Business Ownership", institution: "Front Range Community College", image: "/certificates/small-business-ownership.JPG", inProgress: false }
     ],
     projectManagement: [
-      { name: "Project Management Fundamentals", institution: "Google", image: null, inProgress: true },
+      { name: "Foundations of Project Management", institution: "Google", image: null, inProgress: true },
       { name: "AI Product Manager Specialization", institution: "Microsoft", image: null, inProgress: true },
       { name: "AI Product Management Specialization", institution: "Duke", image: null, inProgress: true }
     ],
