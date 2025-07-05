@@ -209,45 +209,6 @@ export default function Home() {
     }));
   };
 
-  const renderCertificateCard = (section, colorClass) => {
-    const certificates = certificateData[section];
-    const currentIndex = carouselPositions[section];
-    const certificate = certificates[currentIndex];
-    
-    return (
-      <div className={`cyber-border bg-gray-900/50 p-6 md:p-8 border border-${colorClass}-400/30 hover:border-${colorClass}-400 hover:neon-glow transition-all relative overflow-hidden`}>
-        <div className={`absolute inset-0 bg-gradient-to-br from-${colorClass}-400/5 to-purple-400/5`}></div>
-        <div className="relative z-10 text-center">
-          {certificate.image ? (
-            <div className={`w-full h-64 md:h-80 rounded-xl overflow-hidden mb-4 relative border-2 border-${colorClass}-400/30`}>
-              <img 
-                src={certificate.image}
-                alt={certificate.name}
-                className="w-full h-full object-cover"
-                width={400}
-                height={320}
-                loading="lazy"
-                decoding="async"
-              />
-              <div className={`absolute inset-0 bg-gradient-to-br from-${colorClass}-400/10 via-purple-600/5 to-pink-400/10`}></div>
-            </div>
-          ) : (
-            <div className="mb-4">
-              <div className="text-lg md:text-xl font-bold cyber-body text-cyan-100 mb-4 break-words px-2">
-                {certificate.name.toUpperCase().replace(/ /g, '_')}
-              </div>
-              <div className={`text-sm md:text-base cyber-body text-${colorClass}-400 break-words px-2`}>
-                {certificate.institution.toUpperCase().replace(/ /g, '_')}
-              </div>
-              {certificate.inProgress && (
-                <div className="text-sm text-cyan-300 mt-2 tracking-wider">IN PROGRESS</div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="min-h-screen bg-black text-cyan-100 overflow-x-hidden">
@@ -549,45 +510,51 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CERTIFICATION.CSV">CERTIFICATION.CSV</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[2.5%] w-full mx-auto" style={{paddingLeft: '5%', paddingRight: '5%'}}>
+          <div className="grid grid-cols-4 gap-[1.5%] w-full mx-auto" style={{paddingLeft: '2%', paddingRight: '2%'}}>
             {/* AI Ethics Section */}
             <div className="space-y-8">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-cyan-400 mb-6">
+              <h3 className="text-sm md:text-base lg:text-xl font-bold cyber-font text-center neon-text text-cyan-400 mb-4">
                 AI_ETHICS
               </h3>
               <div className="relative">
 {(() => {
                   const currentCert = certificateData.aiEthics[carouselPositions.aiEthics];
                   return (
-                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow">
+                    <div className="cyber-border bg-gray-900/50 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
                       {/* Certificate Image */}
-                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-cyan-400/30 bg-black">
+                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            className="cursor-pointer hover:opacity-90 transition-opacity duration-200"
                             title="Click to view full size certificate"
+                            style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}
                           >
-                            <img 
-                              src={currentCert.image}
-                              alt={currentCert.name}
-                              className="w-full h-auto object-contain"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                imageRendering: 'crisp-edges',
-                                imageRendering: '-webkit-optimize-contrast',
-                                imageRendering: 'optimize-contrast',
-                                maxWidth: 'none',
-                                filter: 'contrast(1.1) brightness(1.05)'
-                              }}
-                            />
+                            <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderRadius: '4px', padding: '8px'}}>
+                              <img 
+                                src={currentCert.image}
+                                alt={currentCert.name}
+                                className="object-contain"
+                                loading="lazy"
+                                decoding="async"
+                                style={{
+                                  maxWidth: '100%',
+                                  maxHeight: '100%',
+                                  imageRendering: 'crisp-edges',
+                                  imageRendering: '-webkit-optimize-contrast',
+                                  imageRendering: 'optimize-contrast',
+                                  filter: 'contrast(1.1) brightness(1.05)',
+                                  display: 'block',
+                                  borderRadius: '2px'
+                                }}
+                              />
+                            </div>
                           </a>
                         ) : (
                           /* Enhanced Cyberpunk "In Progress" Graphic */
-                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                          <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
                             {/* Animated background layers */}
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
                             
@@ -610,7 +577,7 @@ export default function Home() {
                             </div>
                             
                             <div className="relative z-10 text-center">
-                              <div className="text-cyan-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                              <div className="text-cyan-400 text-sm md:text-lg font-bold cyber-font mb-2 animate-pulse">
                                 [ IN PROGRESS ]
                               </div>
                               <div className="flex items-center justify-center space-x-1">
@@ -636,14 +603,16 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      {/* Certificate Name */}
-                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words mb-2">
-                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </h4>
-                      {/* Issuing Institution */}
-                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-cyan-400 break-words">
-                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </p>
+                      {/* Certificate Text - Fixed Height */}
+                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                        <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words mb-1">
+                          {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </h4>
+                        {/* Issuing Institution */}
+                        <p className="text-xs lg:text-sm text-center cyber-body text-cyan-400 break-words">
+                          {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </p>
+                      </div>
                     </div>
                   );
                 })()}
@@ -664,42 +633,48 @@ export default function Home() {
 
             {/* Business Section */}
             <div className="space-y-8">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-orange-400 mb-6">
+              <h3 className="text-sm md:text-base lg:text-xl font-bold cyber-font text-center neon-text text-orange-400 mb-4">
                 BUSINESS
               </h3>
               <div className="relative">
 {(() => {
                   const currentCert = certificateData.business[carouselPositions.business];
                   return (
-                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-orange-400/30 hover:border-orange-400 transition-all hover:neon-glow">
+                    <div className="cyber-border bg-gray-900/50 border border-orange-400/30 hover:border-orange-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
                       {/* Certificate Image */}
-                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-orange-400/30 bg-black">
+                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            className="cursor-pointer hover:opacity-90 transition-opacity duration-200"
                             title="Click to view full size certificate"
+                            style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}
                           >
-                            <img 
-                              src={currentCert.image}
-                              alt={currentCert.name}
-                              className="w-full h-auto object-contain"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                imageRendering: 'crisp-edges',
-                                imageRendering: '-webkit-optimize-contrast',
-                                imageRendering: 'optimize-contrast',
-                                maxWidth: 'none',
-                                filter: 'contrast(1.1) brightness(1.05)'
-                              }}
-                            />
+                            <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderRadius: '4px', padding: '8px'}}>
+                              <img 
+                                src={currentCert.image}
+                                alt={currentCert.name}
+                                className="object-contain"
+                                loading="lazy"
+                                decoding="async"
+                                style={{
+                                  maxWidth: '100%',
+                                  maxHeight: '100%',
+                                  imageRendering: 'crisp-edges',
+                                  imageRendering: '-webkit-optimize-contrast',
+                                  imageRendering: 'optimize-contrast',
+                                  filter: 'contrast(1.1) brightness(1.05)',
+                                  display: 'block',
+                                  borderRadius: '2px'
+                                }}
+                              />
+                            </div>
                           </a>
                         ) : (
                           /* Enhanced Cyberpunk "In Progress" Graphic */
-                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                          <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
                             {/* Animated background layers */}
                             <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 via-red-600/5 to-pink-400/10"></div>
                             
@@ -722,7 +697,7 @@ export default function Home() {
                             </div>
                             
                             <div className="relative z-10 text-center">
-                              <div className="text-orange-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                              <div className="text-orange-400 text-sm md:text-lg font-bold cyber-font mb-2 animate-pulse">
                                 [ IN PROGRESS ]
                               </div>
                               <div className="flex items-center justify-center space-x-1">
@@ -748,14 +723,16 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      {/* Certificate Name */}
-                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-orange-400 transition-colors break-words mb-2">
-                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </h4>
-                      {/* Issuing Institution */}
-                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-orange-400 break-words">
-                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </p>
+                      {/* Certificate Text - Fixed Height */}
+                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                        <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-orange-400 transition-colors break-words mb-1">
+                          {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </h4>
+                        {/* Issuing Institution */}
+                        <p className="text-xs lg:text-sm text-center cyber-body text-orange-400 break-words">
+                          {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </p>
+                      </div>
                     </div>
                   );
                 })()}
@@ -776,42 +753,48 @@ export default function Home() {
 
             {/* Project Management Section */}
             <div className="space-y-8">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-blue-400 mb-6">
+              <h3 className="text-sm md:text-base lg:text-xl font-bold cyber-font text-center neon-text text-blue-400 mb-4">
                 PROJECT_MGMT
               </h3>
               <div className="relative">
 {(() => {
                   const currentCert = certificateData.projectManagement[carouselPositions.projectManagement];
                   return (
-                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-blue-400/30 hover:border-blue-400 transition-all hover:neon-glow">
+                    <div className="cyber-border bg-gray-900/50 border border-blue-400/30 hover:border-blue-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
                       {/* Certificate Image */}
-                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-blue-400/30 bg-black">
+                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            className="cursor-pointer hover:opacity-90 transition-opacity duration-200"
                             title="Click to view full size certificate"
+                            style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}
                           >
-                            <img 
-                              src={currentCert.image}
-                              alt={currentCert.name}
-                              className="w-full h-auto object-contain"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                imageRendering: 'crisp-edges',
-                                imageRendering: '-webkit-optimize-contrast',
-                                imageRendering: 'optimize-contrast',
-                                maxWidth: 'none',
-                                filter: 'contrast(1.1) brightness(1.05)'
-                              }}
-                            />
+                            <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderRadius: '4px', padding: '8px'}}>
+                              <img 
+                                src={currentCert.image}
+                                alt={currentCert.name}
+                                className="object-contain"
+                                loading="lazy"
+                                decoding="async"
+                                style={{
+                                  maxWidth: '100%',
+                                  maxHeight: '100%',
+                                  imageRendering: 'crisp-edges',
+                                  imageRendering: '-webkit-optimize-contrast',
+                                  imageRendering: 'optimize-contrast',
+                                  filter: 'contrast(1.1) brightness(1.05)',
+                                  display: 'block',
+                                  borderRadius: '2px'
+                                }}
+                              />
+                            </div>
                           </a>
                         ) : (
                           /* Enhanced Cyberpunk "In Progress" Graphic */
-                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                          <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
                             {/* Animated background layers */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-cyan-600/5 to-purple-400/10"></div>
                             
@@ -834,7 +817,7 @@ export default function Home() {
                             </div>
                             
                             <div className="relative z-10 text-center">
-                              <div className="text-blue-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                              <div className="text-blue-400 text-sm md:text-lg font-bold cyber-font mb-2 animate-pulse">
                                 [ IN PROGRESS ]
                               </div>
                               <div className="flex items-center justify-center space-x-1">
@@ -888,42 +871,48 @@ export default function Home() {
 
             {/* Technical Skills Section */}
             <div className="space-y-8">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold cyber-font text-center neon-text text-red-400 mb-6">
+              <h3 className="text-sm md:text-base lg:text-xl font-bold cyber-font text-center neon-text text-red-400 mb-4">
                 TECHNICAL_SKILLS
               </h3>
               <div className="relative">
 {(() => {
                   const currentCert = certificateData.technicalSkills[carouselPositions.technicalSkills];
                   return (
-                    <div className="cyber-border bg-gray-900/50 pt-4 md:pt-6 lg:pt-8 px-8 md:px-12 lg:px-16 pb-8 md:pb-12 lg:pb-16 border border-red-400/30 hover:border-red-400 transition-all hover:neon-glow">
+                    <div className="cyber-border bg-gray-900/50 border border-red-400/30 hover:border-red-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
                       {/* Certificate Image */}
-                      <div className="w-full h-auto rounded-lg overflow-hidden mb-3 relative border-2 border-red-400/30 bg-black">
+                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                            className="cursor-pointer hover:opacity-90 transition-opacity duration-200"
                             title="Click to view full size certificate"
+                            style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}
                           >
-                            <img 
-                              src={currentCert.image}
-                              alt={currentCert.name}
-                              className="w-full h-auto object-contain"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                imageRendering: 'crisp-edges',
-                                imageRendering: '-webkit-optimize-contrast',
-                                imageRendering: 'optimize-contrast',
-                                maxWidth: 'none',
-                                filter: 'contrast(1.1) brightness(1.05)'
-                              }}
-                            />
+                            <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderRadius: '4px', padding: '8px'}}>
+                              <img 
+                                src={currentCert.image}
+                                alt={currentCert.name}
+                                className="object-contain"
+                                loading="lazy"
+                                decoding="async"
+                                style={{
+                                  maxWidth: '100%',
+                                  maxHeight: '100%',
+                                  imageRendering: 'crisp-edges',
+                                  imageRendering: '-webkit-optimize-contrast',
+                                  imageRendering: 'optimize-contrast',
+                                  filter: 'contrast(1.1) brightness(1.05)',
+                                  display: 'block',
+                                  borderRadius: '2px'
+                                }}
+                              />
+                            </div>
                           </a>
                         ) : (
                           /* Enhanced Cyberpunk "In Progress" Graphic */
-                          <div className="w-full aspect-[16/9] flex flex-col items-center justify-center relative overflow-hidden">
+                          <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
                             {/* Animated background layers */}
                             <div className="absolute inset-0 bg-gradient-to-br from-red-400/10 via-pink-600/5 to-purple-400/10"></div>
                             
@@ -946,7 +935,7 @@ export default function Home() {
                             </div>
                             
                             <div className="relative z-10 text-center">
-                              <div className="text-red-400 text-lg md:text-xl font-bold cyber-font mb-2 animate-pulse">
+                              <div className="text-red-400 text-sm md:text-lg font-bold cyber-font mb-2 animate-pulse">
                                 [ IN PROGRESS ]
                               </div>
                               <div className="flex items-center justify-center space-x-1">
@@ -972,14 +961,16 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      {/* Certificate Name */}
-                      <h4 className="text-sm md:text-base lg:text-lg font-bold text-center cyber-body text-cyan-100 group-hover:text-red-400 transition-colors break-words mb-2">
-                        {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </h4>
-                      {/* Issuing Institution */}
-                      <p className="text-xs md:text-sm lg:text-base text-center cyber-body text-red-400 break-words">
-                        {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
-                      </p>
+                      {/* Certificate Text - Fixed Height */}
+                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                        <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-red-400 transition-colors break-words mb-1">
+                          {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </h4>
+                        {/* Issuing Institution */}
+                        <p className="text-xs lg:text-sm text-center cyber-body text-red-400 break-words">
+                          {currentCert.institution.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
+                        </p>
+                      </div>
                     </div>
                   );
                 })()}
