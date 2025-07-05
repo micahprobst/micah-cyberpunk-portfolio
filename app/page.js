@@ -131,7 +131,7 @@ export default function Home() {
       title: "The Next Chapter",
       subtitle: "TBD...",
       description: "I am now furthering my skills through certification courses and external personal study into the AI field and broader business operations.",
-      skills: ["AI for Business", "Google Data Analytics", "Google Project Management", "Google Cloud Data Analytics", "Security, Compliance, and Governance for AI Solutions", "Practical Deep Learning"],
+      skills: Object.values(rawCertificateData).flat().filter(cert => cert.inProgress).map(cert => cert.name),
       skillsLabel: "Certifications in progress",
       color: "from-pink-400 to-purple-500"
     }
