@@ -510,7 +510,7 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="CERTIFICATION.CSV">CERTIFICATION.CSV</span>
           </h2>
           
-          <div className="grid grid-cols-4 gap-[1.5%] w-full mx-auto" style={{paddingLeft: '2%', paddingRight: '2%'}}>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-[1.5%] w-full mx-auto px-4 md:px-[2%]">
             {/* AI Ethics Section */}
             <div className="space-y-8">
               <h3 className="text-sm md:text-base lg:text-xl font-bold cyber-font text-center neon-text text-cyan-400 mb-4">
@@ -520,9 +520,9 @@ export default function Home() {
 {(() => {
                   const currentCert = certificateData.aiEthics[carouselPositions.aiEthics];
                   return (
-                    <div className="cyber-border bg-gray-900/50 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
+                    <div className="cyber-border bg-gray-900/50 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow h-[350px] md:h-[440px] flex flex-col p-0 m-0">
                       {/* Certificate Image */}
-                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <div className="w-full relative h-[230px] md:h-[320px] m-0 p-4 md:p-6 bg-transparent overflow-hidden flex items-center justify-center">
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
@@ -604,7 +604,7 @@ export default function Home() {
                         )}
                       </div>
                       {/* Certificate Text - Fixed Height */}
-                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                      <div className="flex flex-col justify-center h-[120px] md:h-[120px] p-3 md:p-3 flex-none">
                         <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-words mb-1">
                           {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
                         </h4>
@@ -640,9 +640,9 @@ export default function Home() {
 {(() => {
                   const currentCert = certificateData.business[carouselPositions.business];
                   return (
-                    <div className="cyber-border bg-gray-900/50 border border-orange-400/30 hover:border-orange-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
+                    <div className="cyber-border bg-gray-900/50 border border-orange-400/30 hover:border-orange-400 transition-all hover:neon-glow h-[350px] md:h-[440px] flex flex-col p-0 m-0">
                       {/* Certificate Image */}
-                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <div className="w-full relative h-[230px] md:h-[320px] m-0 p-4 md:p-6 bg-transparent overflow-hidden flex items-center justify-center">
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
@@ -724,7 +724,7 @@ export default function Home() {
                         )}
                       </div>
                       {/* Certificate Text - Fixed Height */}
-                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                      <div className="flex flex-col justify-center h-[120px] md:h-[120px] p-3 md:p-3 flex-none">
                         <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-orange-400 transition-colors break-words mb-1">
                           {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
                         </h4>
@@ -760,9 +760,9 @@ export default function Home() {
 {(() => {
                   const currentCert = certificateData.projectManagement[carouselPositions.projectManagement];
                   return (
-                    <div className="cyber-border bg-gray-900/50 border border-blue-400/30 hover:border-blue-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
+                    <div className="cyber-border bg-gray-900/50 border border-blue-400/30 hover:border-blue-400 transition-all hover:neon-glow h-[350px] md:h-[440px] flex flex-col p-0 m-0">
                       {/* Certificate Image */}
-                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <div className="w-full relative h-[230px] md:h-[320px] m-0 p-4 md:p-6 bg-transparent overflow-hidden flex items-center justify-center">
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
@@ -878,9 +878,9 @@ export default function Home() {
 {(() => {
                   const currentCert = certificateData.technicalSkills[carouselPositions.technicalSkills];
                   return (
-                    <div className="cyber-border bg-gray-900/50 border border-red-400/30 hover:border-red-400 transition-all hover:neon-glow" style={{height: '440px', display: 'flex', flexDirection: 'column', padding: '0', margin: '0'}}>
+                    <div className="cyber-border bg-gray-900/50 border border-red-400/30 hover:border-red-400 transition-all hover:neon-glow h-[350px] md:h-[440px] flex flex-col p-0 m-0">
                       {/* Certificate Image */}
-                      <div className="w-full relative" style={{height: '320px', margin: '0', padding: '24px', backgroundColor: 'transparent', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <div className="w-full relative h-[230px] md:h-[320px] m-0 p-4 md:p-6 bg-transparent overflow-hidden flex items-center justify-center">
                         {currentCert.image ? (
                           <a 
                             href={currentCert.image}
@@ -962,7 +962,7 @@ export default function Home() {
                         )}
                       </div>
                       {/* Certificate Text - Fixed Height */}
-                      <div className="flex flex-col justify-center" style={{height: '120px', padding: '12px', flex: 'none'}}>
+                      <div className="flex flex-col justify-center h-[120px] md:h-[120px] p-3 md:p-3 flex-none">
                         <h4 className="text-xs md:text-sm lg:text-base font-bold text-center cyber-body text-cyan-100 group-hover:text-red-400 transition-colors break-words mb-1">
                           {currentCert.name.toUpperCase().replace(/[^A-Z0-9\s]/g, '')}
                         </h4>
