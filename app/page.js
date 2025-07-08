@@ -2,10 +2,11 @@
 // Clean deployment - removed old static files
 
 import { useState, useEffect } from 'react';
-import { Mail, Linkedin, Calendar, ExternalLink, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Mail, Linkedin, Calendar, ExternalLink, Zap, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [glitchActive, setGlitchActive] = useState(false);
+  const [timelineExpanded, setTimelineExpanded] = useState(false);
   const [carouselPositions, setCarouselPositions] = useState({
     aiEthics: 0,
     business: 0,
@@ -1018,63 +1019,80 @@ export default function Home() {
               <span className="relative z-10">VIEW_RESUME.PDF</span>
             </a>
           </div>
+
+          {/* Read the Whole Story Button */}
+          <div className="mt-8 text-center">
+            <button 
+              onClick={() => setTimelineExpanded(!timelineExpanded)}
+              className="inline-flex items-center justify-center bg-gradient-to-r from-pink-600 to-purple-600 text-black px-8 py-4 rounded-lg font-bold hover:from-pink-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cyber-font neon-glow relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+              <span className="relative z-10">READ_THE_WHOLE_STORY</span>
+              <ChevronDown 
+                size={20} 
+                className={`ml-2 relative z-10 transition-transform duration-300 ${timelineExpanded ? 'rotate-180' : ''}`} 
+              />
+            </button>
+          </div>
         </div>
 
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-pink-400 neon-glow"></div>
+        {timelineExpanded && (
+          <div className="max-w-6xl mx-auto px-4 mt-12 animate-fadeIn">
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-pink-400 neon-glow"></div>
 
-            {timelineItems.map((item, index) => (
-              <div key={index} className="relative flex items-center mb-8 md:-mb-8">
-                {/* Timeline Dot */}
-                <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${item.color} rounded-full border-4 border-black shadow-lg z-10 animate-cyber-pulse`}></div>
+              {timelineItems.map((item, index) => (
+                <div key={index} className="relative flex items-center mb-8 md:-mb-8">
+                  {/* Timeline Dot */}
+                  <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${item.color} rounded-full border-4 border-black shadow-lg z-10 animate-cyber-pulse`}></div>
 
-                {/* Content Card */}
-                <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                  <div className="cyber-border bg-gray-900/50 p-4 md:p-6 lg:p-8 border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all duration-300 group relative overflow-hidden">
-                    <div className="absolute inset-0 cyber-grid opacity-5"></div>
-                    
-                    <div className="flex items-center justify-between mb-4 relative z-10">
-                      <span className="text-sm font-bold text-cyan-400 bg-black/50 px-4 py-2 rounded cyber-body tracking-wider border border-cyan-400/30">
-                        {item.date}
-                      </span>
-                      <Calendar size={20} className="text-cyan-400 animate-cyber-pulse" />
-                    </div>
-                    
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
-                      {item.title.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
-                    </h3>
-                    <p className="text-purple-400 font-semibold mb-4 text-base md:text-lg cyber-body break-normal">
-                      {item.subtitle.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
-                    </p>
-                    <p className="text-cyan-100 mb-6 leading-relaxed cyber-body">{item.description}</p>
-                    
-                    {item.skills.length > 0 && (
-                      <div className="pt-6 border-t border-cyan-400/30 relative z-10">
-                        <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-normal">
-                          {item.skillsLabel.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}:
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {item.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-normal">
-                              {skill.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
-                            </span>
-                          ))}
-                        </div>
+                  {/* Content Card */}
+                  <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                    <div className="cyber-border bg-gray-900/50 p-4 md:p-6 lg:p-8 border border-cyan-400/30 hover:border-cyan-400 hover:neon-glow transition-all duration-300 group relative overflow-hidden">
+                      <div className="absolute inset-0 cyber-grid opacity-5"></div>
+                      
+                      <div className="flex items-center justify-between mb-4 relative z-10">
+                        <span className="text-sm font-bold text-cyan-400 bg-black/50 px-4 py-2 rounded cyber-body tracking-wider border border-cyan-400/30">
+                          {item.date}
+                        </span>
+                        <Calendar size={20} className="text-cyan-400 animate-cyber-pulse" />
                       </div>
-                    )}
-                    
-                    {/* Corner accents */}
-                    <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+                      
+                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold cyber-font mb-3 text-cyan-100 group-hover:text-cyan-400 transition-colors break-normal">
+                        {item.title.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
+                      </h3>
+                      <p className="text-purple-400 font-semibold mb-4 text-base md:text-lg cyber-body break-normal">
+                        {item.subtitle.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
+                      </p>
+                      <p className="text-cyan-100 mb-6 leading-relaxed cyber-body">{item.description}</p>
+                      
+                      {item.skills.length > 0 && (
+                        <div className="pt-6 border-t border-cyan-400/30 relative z-10">
+                          <h4 className="font-semibold text-pink-400 mb-3 text-lg cyber-body tracking-wider break-normal">
+                            {item.skillsLabel.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}:
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {item.skills.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="bg-gradient-to-r from-cyan-400/20 to-purple-400/20 text-cyan-400 px-4 py-2 rounded border border-cyan-400/30 text-sm font-medium cyber-body hover:neon-glow transition-all break-normal">
+                                {skill.toUpperCase().replace(/ /g, '_').replace(/_/g, '_\u200B')}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Corner accents */}
+                      <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+                      <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-pink-400 transition-colors"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Contact Section */}
