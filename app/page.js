@@ -281,7 +281,7 @@ export default function Home() {
                 
                 <p className="text-lg cyber-body leading-relaxed text-cyan-100">
                   My name is <strong>Micah Probst</strong>, a recent graduate of the University of Colorado Boulder with a <strong>Bachelor's Degree in Philosophy</strong> and <strong>multiple business certifications </strong> 
-                  acquired during my associates degree. I've done all this at <strong>19</strong>, and I'm not stopping. My current focus is on
+                  acquired during my associates degree. I did all this by <strong>19</strong>, and I'm just getting started. My current focus is on
                   certifications in <strong>project management, deep learning, data analytics, and AI governance,</strong> and my goal is to apply my analytical and organizational
                   skills to help create a more efficient and responsibly AI-powered future of work.
                 </p>
