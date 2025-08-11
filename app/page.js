@@ -346,7 +346,56 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {/* The Crisis of Epistemic Agency Paper */}
+            <a 
+              href="/documents/The_Crisis_of_Epistemic_Agency.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative cursor-pointer block"
+            >
+              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
+                <div className="w-full h-80 md:h-[26rem] rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white aspect-[8.5/11]">
+                  <img 
+                    src="/images/crisis-epistemic-agency-thumb.jpg"
+                    alt="The Crisis of Epistemic Agency - First Page"
+                    className="w-full h-full object-contain bg-white"
+                    width={400}
+                    height={518}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center" style={{display: 'none'}}>
+                    <div className="text-gray-600 text-center">
+                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                      </svg>
+                      <p className="text-xs md:text-sm font-medium">PDF Preview</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-600/5 to-pink-400/10"></div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-base md:text-lg font-bold cyber-body text-cyan-100 group-hover:text-cyan-400 transition-colors break-all leading-tight mb-2">
+                    THE_CRISIS_OF_EPISTEMIC_AGENCY
+                  </h3>
+                  <p className="text-xs md:text-sm cyber-body text-cyan-300/80 leading-relaxed">
+                    Argues that artificial intelligence threatens human "epistemic agency"—our capacity to actively form genuine knowledge—by transforming us from thinking beings into passive consumers of processed information, thereby undermining the intellectual virtues essential for democratic citizenship.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-t-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
+            </a>
+            
             {/* Beyond Binary Understanding Paper */}
             <a 
               href="/documents/beyond-binary-understanding.pdf" 
