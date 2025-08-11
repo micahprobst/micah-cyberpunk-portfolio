@@ -359,7 +359,7 @@ export default function Home() {
                 <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
                 <div className="w-full h-80 md:h-[26rem] rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white aspect-[8.5/11]">
                   <img 
-                    src="/images/crisis-epistemic-agency-thumb.jpg"
+                    src="/images/crisis-of-epistemic-agency-thumb.jpg"
                     alt="The Crisis of Epistemic Agency - First Page"
                     className="w-full h-full object-contain bg-white"
                     width={400}
