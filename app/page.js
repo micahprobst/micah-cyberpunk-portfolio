@@ -346,15 +346,17 @@ export default function Home() {
             <span className={`${glitchActive ? 'glitch' : ''}`} data-text="PAPERS.DOC">PAPERS.DOC</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {/* The Crisis of Epistemic Agency Paper */}
-            <a 
-              href="/documents/The_Crisis_of_Epistemic_Agency.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group relative cursor-pointer block"
-            >
-              <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
+          <div className="max-w-5xl mx-auto">
+            {/* Top row - single centered paper */}
+            <div className="flex justify-center mb-6 md:mb-8">
+              {/* The Crisis of Epistemic Agency Paper */}
+              <a 
+                href="/documents/The_Crisis_of_Epistemic_Agency.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative cursor-pointer block"
+              >
+                <div className="cyber-border bg-gray-900/50 p-4 md:p-5 border border-cyan-400/30 hover:border-cyan-400 transition-all hover:neon-glow max-w-sm mx-auto">
                 <div className="w-full h-80 md:h-[26rem] rounded-xl overflow-hidden mb-3 md:mb-4 relative border-2 border-cyan-400/30 bg-white aspect-[8.5/11]">
                   <img 
                     src="/images/crisis-epistemic-agency-thumb.jpg"
@@ -395,7 +397,10 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-3 h-3 md:w-4 md:h-4 border-l-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
               <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-r-2 border-b-2 border-cyan-400 group-hover:border-orange-400 transition-colors"></div>
             </a>
-            
+          </div>
+          
+          {/* Bottom row - two papers side by side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Beyond Binary Understanding Paper */}
             <a 
               href="/documents/beyond-binary-understanding.pdf" 
@@ -495,6 +500,7 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Education Section */}
