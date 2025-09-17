@@ -406,7 +406,7 @@ export default function Library() {
       <main className="relative z-10 pt-24 pb-12">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-center cyber-font mb-12 neon-text text-yellow-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="RECOMMENDED_READING">RECOMMENDED_READING</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="RECOMMENDED READING">RECOMMENDED READING</span>
           </h1>
 
           {/* Category Filter Bar */}

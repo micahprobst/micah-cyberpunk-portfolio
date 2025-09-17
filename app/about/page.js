@@ -92,7 +92,7 @@ export default function About() {
       <main className="relative z-10 pt-24 pb-12">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-center cyber-font mb-12 neon-text text-cyan-400">
-            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ABOUT_THE_ANALYST">ABOUT_THE_ANALYST</span>
+            <span className={`${glitchActive ? 'glitch' : ''}`} data-text="ABOUT THE ANALYST">ABOUT THE ANALYST</span>
           </h1>
 
           {/* Hero Image Section */}
