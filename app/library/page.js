@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Library() {
   const [glitchActive, setGlitchActive] = useState(false);
   const [activeLibraryFilter, setActiveLibraryFilter] = useState('ALL');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const bookCategories = ['ALL', 'FOUNDATIONAL_REVOLUTIONARY_ANALYSIS', 'DIALECTICAL_MATERIALISM', 'CONSCIOUSNESS_CONTROL', 'CONTEMPORARY_ANALYSIS', 'SPIRITUAL_DIMENSIONS', 'INTERSECTIONAL_ANALYSIS', 'CIVILIZATIONAL_CYCLES', 'ESOTERIC_HISTORY', 'PSYCHOLOGICAL_OPERATIONS', 'REVOLUTIONARY_PRAXIS'];
 
@@ -346,13 +347,59 @@ export default function Library() {
             <div className="text-2xl font-bold cyber-font neon-text text-cyan-400">
               <a href="/">MICAH.EXE</a>
             </div>
-            <div className="flex space-x-8 cyber-body">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8 cyber-body">
               <a href="/" className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider">POSTS</a>
               <a href="/library" className="text-cyan-400 font-medium tracking-wider">LIBRARY</a>
               <a href="/about" className="text-cyan-100 hover:text-cyan-400 transition-colors font-medium tracking-wider">ABOUT</a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-cyan-400 hover:text-cyan-300 focus:text-cyan-300 transition-colors"
+              >
+                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+                  ) : (
+                    <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-cyan-400/30">
+            <div className="px-4 py-2 space-y-1">
+              <a 
+                href="/"
+                className="block px-3 py-2 text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors font-medium tracking-wider cyber-body"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                POSTS
+              </a>
+              <a 
+                href="/library"
+                className="block px-3 py-2 text-cyan-400 font-medium tracking-wider cyber-body"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                LIBRARY
+              </a>
+              <a 
+                href="/about"
+                className="block px-3 py-2 text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors font-medium tracking-wider cyber-body"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ABOUT
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Main Content */}

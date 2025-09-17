@@ -7,6 +7,7 @@ import { posts } from './data/posts';
 export default function Home() {
   const [glitchActive, setGlitchActive] = useState(false);
   const [activeFilter, setActiveFilter] = useState('ALL');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const keywords = ['ALL', 'POWER', 'CONSCIOUSNESS', 'ECONOMICS', 'SPIRITUALITY', 'PSYCHOLOGY', 'TECHNOLOGY', 'HISTORY', 'CULTURE', 'REVOLUTION', 'PHILOSOPHY', 'SOCIETY', 'POLITICS', 'IDENTITY', 'MEDIA', 'EDUCATION', 'EMPIRE'];
 
@@ -56,6 +57,7 @@ export default function Home() {
                 MICAH.EXE
               </span>
             </div>
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8 cyber-body">
               <button 
                 onClick={() => scrollToSection('posts')} 
@@ -79,8 +81,55 @@ export default function Home() {
                 <span className="absolute inset-0 bg-cyan-400/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
               </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-cyan-400 hover:text-cyan-300 focus:text-cyan-300 transition-colors"
+              >
+                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+                  ) : (
+                    <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-cyan-400/30">
+            <div className="px-4 py-2 space-y-1">
+              <button 
+                onClick={() => {
+                  scrollToSection('posts');
+                  setMobileMenuOpen(false);
+                }} 
+                className="block w-full text-left px-3 py-2 text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors font-medium tracking-wider cyber-body"
+              >
+                POSTS
+              </button>
+              <a 
+                href="/library"
+                className="block px-3 py-2 text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors font-medium tracking-wider cyber-body"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                LIBRARY
+              </a>
+              <a 
+                href="/about"
+                className="block px-3 py-2 text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors font-medium tracking-wider cyber-body"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ABOUT
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -115,7 +164,7 @@ export default function Home() {
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400"></div>
                 
                 <p className="text-lg cyber-body leading-relaxed text-cyan-100">
-                  Hello, friend, I'm Micah Probst, a Gen Z philosopher investigating how power works in all ways. After completing my philosophy degree at nineteen, I began studying AI's erosion of human thinking capacity and discovered that our crisis runs deeper than technology—we've become willing participants in systems that exploit our labor, control our beliefs, and suppress our spiritual potential. My work examines not only what systems of social control we're victim to, but the psychological, spiritual, and historical factors that make them so effective. Through multi-disciplinary analysis weaving together revolutionary thinkers in politics, philosophy, and more, I explore the conditions of consciousness that make liberation—in every respect—both necessary and possible.
+                  Hello, friend! I'm Micah Probst, a <b>Gen Z philosopher</b> investigating how power works in all ways. After completing my philosophy degree at nineteen, I began studying AI's erosion of human thinking capacity and discovered that <b>our crisis runs deeper than technology</b>—we've become willing participants in systems that exploit our labor, control our beliefs, and suppress our spiritual potential. My work examines not only what systems of social control we're victim to, but the <b>psychological, spiritual, and historical</b> factors that make them so effective. Through multi-disciplinary analysis weaving together revolutionary thinkers in politics, philosophy, and more, I explore the conditions of consciousness that make liberation—in every respect—both necessary and possible.
                 </p>
               </div>
             </div>
