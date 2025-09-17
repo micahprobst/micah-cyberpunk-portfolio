@@ -1,17 +1,17 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Micah Probst | Philosophy Graduate & AI Ethics Specialist',
-  description: 'Philosophy Graduate, Critical Thinker, People Person. Specializing in AI Ethics & Project Management in Denver/Boulder area.',
+  title: 'Micah Probst | Digital Philosophy Lab',
+  description: 'Gen Z philosopher investigating power, consciousness, and liberation. Multi-disciplinary analysis of social control systems.',
   keywords: 'Micah Probst, Philosophy, AI Ethics, Project Management, Data Analytics, Denver, Boulder, Colorado, Cyberpunk',
   authors: [{ name: 'Micah Probst' }],
   creator: 'Micah Probst',
   metadataBase: new URL('https://micahprobst.com'),
   openGraph: {
-    title: 'Micah Probst | Philosophy Graduate & AI Ethics Specialist',
-    description: 'Philosophy Graduate specializing in AI Ethics & Project Management. Ready to bring responsible AI implementation to your organization.',
+    title: 'Micah Probst | Digital Philosophy Lab',
+    description: 'Gen Z philosopher investigating power, consciousness, and liberation. Multi-disciplinary analysis of social control systems.',
     url: 'https://micahprobst.com',
-    siteName: 'Micah Probst Portfolio',
+    siteName: 'Micah Probst Digital Philosophy Lab',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -19,14 +19,14 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Micah Probst - Philosophy Graduate & AI Ethics Specialist',
+        alt: 'Micah Probst - Digital Philosophy Lab',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Micah Probst | Philosophy Graduate & AI Ethics Specialist',
-    description: 'Philosophy Graduate specializing in AI Ethics & Project Management',
+    title: 'Micah Probst | Digital Philosophy Lab',
+    description: 'Gen Z philosopher investigating power, consciousness, and liberation',
     images: ['/og-image.jpg'],
   },
   robots: {
